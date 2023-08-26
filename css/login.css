@@ -38,9 +38,9 @@ body {
 }
 
 .login input {
-    margin-bottom: 1rem;
+    margin-bottom: .7rem;
     background-color: #f0f0f0;
-    padding: 10px;
+    padding: 10px 10px 10px 18px;
     color: #333;
     border: none;
     height: 45px;
@@ -48,9 +48,13 @@ body {
     border-radius: 5px;
 }
 
+.login input::after {
+    margin-left: 1rem;
+}
+
 .login label {
+    margin-bottom: 6px;
     color: #f0f0f0;
-    padding-bottom: 5px;
 }
 
 .logo-img {
@@ -68,12 +72,12 @@ body {
 }
 
 input::placeholder {
-    padding-left: 6px;
     background-color: #f0f0f0;
     font-size: 14px;
 }
 
 form [type="submit"] {
+    box-shadow: 0px 1px 10px #007bffa6;
     display: block;
     background-color: #007bff;
     color: #d6d6d6;
@@ -87,19 +91,32 @@ form [type="submit"] {
     transition: background-color 0.3s ease;
 }
 
+.entrar {
+    margin-top: 1rem;
+}
+
 form [type="submit"]:hover {
     background-color: #0056b3;
 }
 
 .remember-forgot {
     display: flex;
-    align-items: center; /* Alinha verticalmente */
-    font-size: 14.5px;
-    margin-top: 10px; /* Ajuste conforme necessário */
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 8px; /* Ajuste conforme necessário */
+    align-items: center;
 }
 
 .remember-forgot label input {
+    margin: 0;
     margin-right: 5px;
+}
+
+.remember-forgot label{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-right: 5em;
 }
 
 .remember-forgot a {
