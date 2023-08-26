@@ -1,77 +1,125 @@
-*{
+/* login.css */
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 
-body{
-    background-color: crimson;
-
+body {
+    background-image: url(/img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.container{
+.container {
     justify-content: center;
     align-items: center;
-    height: 100vh;
     display: flex;
-
+    min-height: 100vh;
 }
 
-.login{
+.login {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: blueviolet;
+    background: #202020f6;
+    box-shadow: 0 15px 25px rgba(0,0,0,.1);
     border-radius: 10px;
-    width: 355px;
-    height: 320px;
+    width: 416px;
     padding: 35px;
+    font-size: 14px;
 }
 
-.login form{
+.login form {
     display: flex;
     flex-direction: column;
     width: 100%;
-    
 }
 
-.login input{
-    margin-top: 10px;
-    background-color: blue;
-    padding-left: 10px;
-    color: #ccc;
+.login input {
+    margin-bottom: 1rem;
+    background-color: #f0f0f0;
+    padding: 10px;
+    color: #333;
     border: none;
     height: 45px;
     outline: none;
     border-radius: 5px;
 }
 
-.logo img{
-    width: 65px;
+.login label {
+    color: #f0f0f0;
+    padding-bottom: 5px;
+}
+
+.logo-img {
+    margin-bottom: .3rem;
+    width: 80px;
     height: auto;
 }
 
-input::placeholder{
-    color:white;
+.logo-text {
+    color: #f0f0f0;
+    margin-bottom: 1.3rem;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+input::placeholder {
+    padding-left: 6px;
+    background-color: #f0f0f0;
     font-size: 14px;
 }
 
-form [type="submit"]{
+form [type="submit"] {
     display: block;
-    background-color: aqua;
-    font-size: 20px;
+    background-color: #007bff;
+    color: #d6d6d6;
+    font-size: 16px;
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-p{
-    color:bisque;
+form [type="submit"]:hover {
+    background-color: #0056b3;
 }
 
-a{
-    color: aquamarine;
+.remember-forgot {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    font-size: 14.5px;
+    margin-top: 10px; /* Ajuste conforme necessário */
+}
+
+.remember-forgot label input {
+    margin-right: 5px;
+}
+
+.remember-forgot a {
+    color: #fff;
     text-decoration: none;
-    margin-left: 10px;
+    margin-left: 5px; /* Espaçamento entre os elementos */
+}
+
+.register-container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    margin-top: 13px;
+}
+
+.register-text {
+    color: #f0f0f0;
+}
+
+.register-redirect {
+    color: #007bff;
+    text-decoration: none;
+    margin-left: 5px; /* Espaçamento entre os elementos */
 }
