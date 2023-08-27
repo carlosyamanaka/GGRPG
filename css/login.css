@@ -7,16 +7,24 @@
 }
 
 body {
-    background-image: url(/img/background.jpg);
+    background: linear-gradient(120deg, #3de0ac75, #538CF0, #a61cf3), rgba(0, 0, 0, 0.5);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .container {
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
     display: flex;
-    min-height: 100vh;
+}
+
+.background-image {
+    display: flex;
+    position: absolute;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .login {
@@ -53,8 +61,11 @@ body {
 }
 
 .login label {
-    margin-bottom: 6px;
     color: #f0f0f0;
+}
+
+.labels {
+    margin-bottom: 8px;
 }
 
 .logo-img {
@@ -79,6 +90,7 @@ input::placeholder {
 form [type="submit"] {
     box-shadow: 0px 1px 10px #007bffa6;
     display: block;
+    height: 45px;
     background-color: #007bff;
     color: #d6d6d6;
     font-size: 16px;
@@ -86,7 +98,7 @@ form [type="submit"] {
     font-weight: bold;
     cursor: pointer;
     border: none;
-    padding: 10px;
+    padding: 10px 10px 10px 18px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
@@ -128,7 +140,7 @@ form [type="submit"]:hover {
 .register-container {
     display: flex;
     align-items: center; /* Alinha verticalmente */
-    margin-top: 13px;
+    margin-top: 1rem;
 }
 
 .register-text {
@@ -139,4 +151,11 @@ form [type="submit"]:hover {
     color: #007bff;
     text-decoration: none;
     margin-left: 5px; /* Espaçamento entre os elementos */
+}
+
+.mensagemforgot {
+    align-items: start;
+    color: #f0f0f0;
+    margin-top: .3rem;
+    margin-bottom: .2rem;
 }
