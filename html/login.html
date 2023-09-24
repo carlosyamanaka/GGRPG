@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GGRPG - Tela de Login</title>
+    
+    <link rel="stylesheet" href="/css/login.css">
+    
+    <!-- Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Rubik -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img class="background-image" src="/img/background.jpg"alt="Imagem de fundo">
+    <div class="container">
+        <div class="login">
+            <img src="/img/logo1.png" alt="Logo" class="logo-img">
+            <p class="logo-text">Bem-vindo ao GGRPG</p>
+            <form class="form" action="#" method="post">
+                <label class="labels" for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Digite seu email">
+                <label class="labels" for="password">Senha</label>
+                <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
+                <div class="remember-forgot">
+                    <label><input type="checkbox"/>Lembre-se de mim</label>
+                    <a href="forgotpass.html">Esqueceu a senha?</a>
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
+            <div class="register-container">
+                <p class="register-text">Ainda não tem conta?</p>
+                <a href="register.html" class="register-redirect">Criar conta</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

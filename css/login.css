@@ -91,7 +91,7 @@ input::placeholder {
 }
 
 form [type="submit"] {
-    box-shadow: 0px 1px 10px #007bffa6;
+    box-shadow: 0px 1px 1px #007bffa6;
     display: block;
     height: 45px;
     background-color: #007bff;
