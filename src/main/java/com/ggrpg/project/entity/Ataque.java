@@ -10,6 +10,14 @@ import jakarta.persistence.Table;
 @Table(name = "ataque_tp")
 public class Ataque implements Serializable {
 
+    // 1. Instaciadas as entidades
+    // 2. Adicionados equals e hashCodes para manipulação e comparação de objetos
+    // 3. Declarados Getters and Setters (métodos de acesso e modificação)
+    // 4. Implementado Serializable
+    // 5. Adicionadas annotations principais (serializable, entity e id)
+    // 6. Não foram adicionadas annotations @Data, @NoArgsConstructor nem
+    // @AllArgsConstructor para melhor visualização da orientação a objetos
+
     private static final long serialVersionUID = 1L;
 
     @Id
