@@ -3,6 +3,8 @@ package com.ggrpg.project.entity;
 import java.io.Serializable;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -13,6 +15,7 @@ public class Habilidade implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer custo;
     private String descricao;
@@ -29,14 +32,6 @@ public class Habilidade implements Serializable {
         this.pagina = pagina;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public Integer getCusto() {
         return custo;
     }
@@ -49,6 +44,10 @@ public class Habilidade implements Serializable {
         return descricao;
     }
 
+    public static long getSerialversionuid() {
+        return serialVersionUID;
+    }
+
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
@@ -59,6 +58,10 @@ public class Habilidade implements Serializable {
 
     public void setPagina(Integer pagina) {
         this.pagina = pagina;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     @Override

@@ -1,9 +1,13 @@
 package com.ggrpg.project.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -13,24 +17,23 @@ public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private Integer custo;
     private String descricao;
     private Integer pagina;
+
+    // Um usuário pode ter uma LISTA de fichas, e no caso do usuário vai ser (Um
+    // usuário para muitas fichas -> One(Usuário) to Many!)
+    @OneToMany(mappedBy = "usuario")
+    private List<Ficha> fichas;
 
     public Usuario(Integer id, Integer custo, String descricao, Integer pagina) {
         this.id = id;
         this.custo = custo;
         this.descricao = descricao;
         this.pagina = pagina;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Integer getCusto() {
@@ -55,6 +58,10 @@ public class Usuario implements Serializable {
 
     public void setPagina(Integer pagina) {
         this.pagina = pagina;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     @Override

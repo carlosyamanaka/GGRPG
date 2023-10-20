@@ -3,6 +3,8 @@ package com.ggrpg.project.entity;
 import java.io.Serializable;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -13,6 +15,7 @@ public class Pericia implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer acrobacia;
     private Integer adestramento;
@@ -82,14 +85,6 @@ public class Pericia implements Serializable {
         this.tatica = tatica;
         this.tecnologia = tecnologia;
         this.vontade = vontade;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public Integer getAcrobacia() {
@@ -314,6 +309,10 @@ public class Pericia implements Serializable {
 
     public void setVontade(Integer vontade) {
         this.vontade = vontade;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     @Override

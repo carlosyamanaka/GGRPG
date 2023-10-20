@@ -3,6 +3,8 @@ package com.ggrpg.project.entity;
 import java.io.Serializable;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -13,7 +15,8 @@ public class Propriedade implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_propriedade;
     private String origem;
     private String classe;
     private String trilha;
@@ -30,10 +33,11 @@ public class Propriedade implements Serializable {
 
     }
 
-    public Propriedade(Integer id, String origem, String classe, String trilha, Integer nex, Integer peRodada,
+    public Propriedade(Integer id_propriedade, String origem, String classe, String trilha, Integer nex,
+            Integer peRodada,
             Integer peTot, Integer pvTot, Integer deslocamento, Integer sanidadeTot, Integer defesa,
             String resistencia) {
-        this.id = id;
+        this.id_propriedade = id_propriedade;
         this.origem = origem;
         this.classe = classe;
         this.trilha = trilha;
@@ -45,14 +49,6 @@ public class Propriedade implements Serializable {
         this.sanidadeTot = sanidadeTot;
         this.defesa = defesa;
         this.resistencia = resistencia;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getOrigem() {
@@ -143,11 +139,15 @@ public class Propriedade implements Serializable {
         this.resistencia = resistencia;
     }
 
+    public Integer getId_propriedade() {
+        return id_propriedade;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((id_propriedade == null) ? 0 : id_propriedade.hashCode());
         return result;
     }
 
@@ -160,10 +160,10 @@ public class Propriedade implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         Propriedade other = (Propriedade) obj;
-        if (id == null) {
-            if (other.id != null)
+        if (id_propriedade == null) {
+            if (other.id_propriedade != null)
                 return false;
-        } else if (!id.equals(other.id))
+        } else if (!id_propriedade.equals(other.id_propriedade))
             return false;
         return true;
     }

@@ -3,6 +3,8 @@ package com.ggrpg.project.entity;
 import java.io.Serializable;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -13,6 +15,7 @@ public class Atributo implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer forca;
     private Integer agilidade;
@@ -68,12 +71,18 @@ public class Atributo implements Serializable {
         this.presenca = presenca;
     }
 
-    public Atributo(Integer forca, Integer agilidade, Integer intelecto, Integer vigor, Integer presenca) {
+    public Atributo(Integer id, Integer forca, Integer agilidade, Integer intelecto, Integer vigor,
+            Integer presenca) {
+        this.id = id;
         this.forca = forca;
         this.agilidade = agilidade;
         this.intelecto = intelecto;
         this.vigor = vigor;
         this.presenca = presenca;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     @Override
