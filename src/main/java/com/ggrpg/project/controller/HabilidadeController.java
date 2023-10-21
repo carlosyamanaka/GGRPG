@@ -1,4 +1,4 @@
-package com.ggrpg.project.resources;
+package com.ggrpg.project.controller;
 
 import java.util.List;
 
@@ -9,24 +9,26 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ggrpg.project.entity.Pericia;
-import com.ggrpg.project.service.PericiaService;
+import com.ggrpg.project.entity.Habilidade;
+import com.ggrpg.project.service.HabilidadeService;
 
 @RestController
-@RequestMapping(name = "/pericias")
-public class PericiaResources {
+@RequestMapping(name = "/habilidades")
+public class HabilidadeController {
+
     @Autowired
-    private PericiaService service;
+    private HabilidadeService service;
 
     @GetMapping
-    public ResponseEntity<List<Pericia>> findAll() {
-        List<Pericia> list = service.findAll();
-        return ResponseEntity.ok().body(list);
+    public ResponseEntity<List<Habilidade>> findAll() {
+        List<Habilidade> obj = service.findAll();
+        return ResponseEntity.ok().body(obj);
     }
 
     @GetMapping(name = "/{id}")
-    public ResponseEntity<Pericia> findById(@PathVariable Integer id) {
-        Pericia obj = service.findById(id);
+    public ResponseEntity<Habilidade> findById(@PathVariable Integer id) {
+        Habilidade obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
+
 }

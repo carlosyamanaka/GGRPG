@@ -11,8 +11,8 @@
 	<groupId>com.ggrpg</groupId>
 	<artifactId>project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>project</name>
-	<description>Demo project for Spring Boot</description>
+	<name>GGRPG</name>
+	<description>Projeto de POO feito com Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

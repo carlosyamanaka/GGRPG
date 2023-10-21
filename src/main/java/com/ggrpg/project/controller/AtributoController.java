@@ -1,4 +1,4 @@
-package com.ggrpg.project.resources;
+package com.ggrpg.project.controller;
 
 import java.util.List;
 
@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ggrpg.project.entity.Propriedade;
-import com.ggrpg.project.service.PropriedadeService;
+import com.ggrpg.project.entity.Atributo;
+import com.ggrpg.project.service.AtributoService;
 
 @RestController
-@RequestMapping(name = "/propriedades")
-public class PropriedadeResources {
+@RequestMapping(value = "/atributos")
+public class AtributoController {
 
     @Autowired
-    private PropriedadeService service;
+    private AtributoService service;
 
     @GetMapping
-    public ResponseEntity<List<Propriedade>> findAll() {
-        List<Propriedade> list = service.findAll();
+    public ResponseEntity<List<Atributo>> findAll() {
+        List<Atributo> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(name = "/{id}")
-    public ResponseEntity<Propriedade> findById(@PathVariable Integer id){
-        Propriedade obj = service.findById(id);
+    public ResponseEntity<Atributo> findById(@PathVariable Integer id) {
+        Atributo obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 

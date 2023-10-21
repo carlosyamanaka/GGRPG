@@ -1,11 +1,16 @@
 package com.ggrpg.project.entity;
 
 import java.io.Serializable;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,18 +21,24 @@ public class Ritual implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_ritual;
+    private Integer id;
     private Integer circulo;
     private String descricao;
     private Integer custo;
     private Integer pagina;
+    private Integer dt;
+
+    @JsonIgnore
+    @ManyToMany
+    @JoinColumn(name = "id", nullable = false)
+    private List<Ficha> fichas;
 
     public Ritual() {
 
     }
 
-    public Ritual(Integer id_ritual, Integer circulo, String descricao, Integer custo, Integer pagina) {
-        this.id_ritual = id_ritual;
+    public Ritual(Integer id, Integer circulo, String descricao, Integer custo, Integer pagina) {
+        this.id = id;
         this.circulo = circulo;
         this.descricao = descricao;
         this.custo = custo;
@@ -70,15 +81,29 @@ public class Ritual implements Serializable {
         this.pagina = pagina;
     }
 
-    public Integer getId_ritual() {
-        return id_ritual;
+    public Integer getId() {
+        return id;
+    }
+
+    /*
+     * public void setId(Integer id) {
+     * this.id = id;
+     * }
+     */
+
+    public Integer getDt() {
+        return dt;
+    }
+
+    public void setDt(Integer dt) {
+        this.dt = dt;
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((id_ritual == null) ? 0 : id_ritual.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
         return result;
     }
 
@@ -91,10 +116,10 @@ public class Ritual implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         Ritual other = (Ritual) obj;
-        if (id_ritual == null) {
-            if (other.id_ritual != null)
+        if (id == null) {
+            if (other.id != null)
                 return false;
-        } else if (!id_ritual.equals(other.id_ritual))
+        } else if (!id.equals(other.id))
             return false;
         return true;
     }

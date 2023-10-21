@@ -1,4 +1,4 @@
-package com.ggrpg.project.resources;
+package com.ggrpg.project.controller;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ import com.ggrpg.project.service.AtaqueService;
 
 @RestController
 @RequestMapping(value = "/ataques")
-public class AtaqueResources {
+public class AtaqueController {
 
     @Autowired
     private AtaqueService service;

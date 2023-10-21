@@ -1,4 +1,4 @@
-package com.ggrpg.project.resources;
+package com.ggrpg.project.controller;
 
 import java.util.List;
 
@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ggrpg.project.entity.Ficha;
-import com.ggrpg.project.service.FichaService;
+import com.ggrpg.project.entity.Ritual;
+import com.ggrpg.project.service.RitualService;
 
 @RestController
-@RequestMapping(name = "/fichas")
-public class FichaResources {
+@RequestMapping(value = "/rituais")
+public class RitualController {
 
     @Autowired
-    private FichaService service;
+    private RitualService service;
 
     @GetMapping
-    public ResponseEntity<List<Ficha>> findAll() {
-        List<Ficha> list = service.findAll();
+    public ResponseEntity<List<Ritual>> findAll() {
+        List<Ritual> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(name = "/{id}")
-    public ResponseEntity<Ficha> findById(@PathVariable Integer id) {
-        Ficha obj = service.findById(id);
+    public ResponseEntity<Ritual> findById(@PathVariable Integer id) {
+        Ritual obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 

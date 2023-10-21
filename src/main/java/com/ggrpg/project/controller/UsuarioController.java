@@ -1,4 +1,4 @@
-package com.ggrpg.project.resources;
+package com.ggrpg.project.controller;
 
 import java.util.List;
 
@@ -9,26 +9,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ggrpg.project.entity.Habilidade;
-import com.ggrpg.project.service.HabilidadeService;
+import com.ggrpg.project.entity.Usuario;
+import com.ggrpg.project.service.UsuarioService;
 
 @RestController
-@RequestMapping(name = "/habilidades")
-public class HabilidadeResources {
+@RequestMapping
+public class UsuarioController {
 
     @Autowired
-    private HabilidadeService service;
+    private UsuarioService service;
 
     @GetMapping
-    public ResponseEntity<List<Habilidade>> findAll() {
-        List<Habilidade> obj = service.findAll();
-        return ResponseEntity.ok().body(obj);
+    public ResponseEntity<List<Usuario>> findAll() {
+        List<Usuario> list = service.findAll();
+        return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(name = "/{id}")
-    public ResponseEntity<Habilidade> findById(@PathVariable Integer id) {
-        Habilidade obj = service.findById(id);
+    public ResponseEntity<Usuario> findById(@PathVariable Integer id) {
+        Usuario obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
-
 }

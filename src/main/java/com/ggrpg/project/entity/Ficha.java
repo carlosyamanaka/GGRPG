@@ -1,13 +1,17 @@
 package com.ggrpg.project.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -37,13 +41,31 @@ public class Ficha implements Serializable {
     // JoinColumn em id, nullable false pois uma ficha não pode ser criada sem um
     // usuário
 
+    // @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "id_usuario", nullable = false)
+    @JoinColumn(name = "id", nullable = false)
     private Usuario usuario;
 
-    public Ficha() {
+    @OneToOne
+    private Propriedade propriedade;
 
-    }
+    @OneToOne
+    private Atributo atributo;
+
+    @OneToOne(mappedBy = "ficha")
+    private Inventario inventario;
+
+    @OneToMany(mappedBy = "ficha")
+    private List<Habilidade> habilidades;
+
+    @OneToOne(mappedBy = "ficha")
+    private Pericia pericia;
+
+    @ManyToMany(mappedBy = "ficha")
+    private List<Ritual> rituais;
+
+    @OneToMany(mappedBy = "ficha")
+    private List<Ataque> ataques;
 
     public Ficha(Integer id, String nomeDoPersonagem, String nomeDoJogador, String sistema) {
         this.id = id;

@@ -1,21 +1,34 @@
 package com.ggrpg.project.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ggrpg.project.entity.Ficha;
+import com.ggrpg.project.service.FichaService;
 
 @RestController
-@RequestMapping(value = "/fichas")
-public class fichaController {
+@RequestMapping(name = "/fichas")
+public class FichaController {
+
+    @Autowired
+    private FichaService service;
 
     @GetMapping
-    public ResponseEntity<Ficha> findAll() {
-        Ficha f1 = new Ficha(1, "1", "1", "1");
+    public ResponseEntity<List<Ficha>> findAll() {
+        List<Ficha> list = service.findAll();
+        return ResponseEntity.ok().body(list);
+    }
 
-        return ResponseEntity.ok().body(f1);
+    @GetMapping(name = "/{id}")
+    public ResponseEntity<Ficha> findById(@PathVariable Integer id) {
+        Ficha obj = service.findById(id);
+        return ResponseEntity.ok().body(obj);
     }
 
 }

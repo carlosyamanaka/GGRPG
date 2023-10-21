@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,7 +18,7 @@ public class Propriedade implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_propriedade;
+    private Integer id;
     private String origem;
     private String classe;
     private String trilha;
@@ -29,15 +31,19 @@ public class Propriedade implements Serializable {
     private Integer defesa;
     private String resistencia;
 
+    @OneToOne
+    @JoinColumn(name = "id", nullable = false)
+    private Ficha ficha;
+
     public Propriedade() {
 
     }
 
-    public Propriedade(Integer id_propriedade, String origem, String classe, String trilha, Integer nex,
+    public Propriedade(Integer id, String origem, String classe, String trilha, Integer nex,
             Integer peRodada,
             Integer peTot, Integer pvTot, Integer deslocamento, Integer sanidadeTot, Integer defesa,
             String resistencia) {
-        this.id_propriedade = id_propriedade;
+        this.id = id;
         this.origem = origem;
         this.classe = classe;
         this.trilha = trilha;
@@ -139,15 +145,15 @@ public class Propriedade implements Serializable {
         this.resistencia = resistencia;
     }
 
-    public Integer getId_propriedade() {
-        return id_propriedade;
+    public Integer getId() {
+        return id;
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((id_propriedade == null) ? 0 : id_propriedade.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
         return result;
     }
 
@@ -160,12 +166,18 @@ public class Propriedade implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         Propriedade other = (Propriedade) obj;
-        if (id_propriedade == null) {
-            if (other.id_propriedade != null)
+        if (id == null) {
+            if (other.id != null)
                 return false;
-        } else if (!id_propriedade.equals(other.id_propriedade))
+        } else if (!id.equals(other.id))
             return false;
         return true;
     }
+
+    /*
+     * public void setId(Integer id) {
+     * this.id = id;
+     * }
+     */
 
 }
