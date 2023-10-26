@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(155, 138, 138);
+    background-image: url(/img/background-index.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    color: white;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 70px;
+}
+
+.logo-text {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    padding-left: .4rem;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80vw;
+    padding: .5rem 0;
+}
+
+#container {
+    width: 80vw;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid rgba(167, 167, 167, 0.877);
+}
+
+#content {
+    width: 100%;
+    margin: 1rem;
+    
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+    padding: .04rem 0;
+    border-bottom: 1px solid rgba(167, 167, 167, 0.877);
+}
+
+.statusbutton {
+    padding: 0 1px 2px 0;
+    border-bottom:  4px solid rgba(0, 0, 255, 0);
+    text-decoration: none;
+    color: grey;
+}
+
+.statusbutton:hover {
+    border-color: rgb(23, 23, 255);
+    transition: all .4s ease-in-out;
+}
+
+.char {
+    background-color: rgb(86, 86, 241);
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+    text-transform: uppercase;
+}
+
+.char-text {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
