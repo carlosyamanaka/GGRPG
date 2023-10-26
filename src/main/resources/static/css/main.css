@@ -9,7 +9,7 @@ body {
     align-items: center;
     flex-direction: column;
     background-color: rgb(155, 138, 138);
-    background-image: url(/img/background-index.png);
+    background-image: url(../img/background-index.png);
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Roboto', sans-serif;
