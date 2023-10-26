@@ -45,7 +45,7 @@ public class AtaqueController {
     }
 
     @PostMapping
-    public Ataque createAtaque(@RequestBody Ataque ataque) {
+    public Ataque createNewAtaque(@RequestBody Ataque ataque) {
         return repository.save(ataque);
     }
 }
