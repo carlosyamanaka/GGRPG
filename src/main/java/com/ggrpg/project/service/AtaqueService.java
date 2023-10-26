@@ -26,4 +26,6 @@ public class AtaqueService {
         return obj.get();
     }
 
+    
+
 }

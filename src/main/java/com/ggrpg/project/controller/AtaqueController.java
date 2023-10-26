@@ -6,10 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ggrpg.project.entity.Ataque;
+import com.ggrpg.project.repository.AtaqueRepository;
 import com.ggrpg.project.service.AtaqueService;
 
 //Obs. Creio que nesse estilo de arquitetura, Resources é o equivalente a Controller -> Preciso arrumar isso depois 
@@ -26,6 +29,9 @@ public class AtaqueController {
     @Autowired
     private AtaqueService service;
 
+    @Autowired
+    AtaqueRepository repository;
+
     @GetMapping
     public ResponseEntity<List<Ataque>> findAll() {
         List<Ataque> list = service.findAll();
@@ -36,5 +42,10 @@ public class AtaqueController {
     public ResponseEntity<Ataque> findById(@PathVariable Integer id) {
         Ataque obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
+    }
+
+    @PostMapping
+    public Ataque createAtaque(@RequestBody Ataque ataque) {
+        return repository.save(ataque);
     }
 }
