@@ -1,6 +1,7 @@
 package com.ggrpg.project.service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,11 @@ public class FichaService {
 
     public Ficha findById(Integer id) {
         Optional<Ficha> obj = repository.findById(id);
-        return obj.get();
+        if(obj.isPresent()) {
+            return obj.get();
+        } else {
+            throw new NoSuchElementException("Não foi possível encontrar o Ataque com o ID: " + id);
+        }
     }
 
 }
