@@ -23,7 +23,7 @@
         <div class="login">
             <img src="../img/logo1.png" alt="Logo" class="logo-img">
             <p class="logo-text">Bem-vindo ao GGRPG</p>
-            <form class="form" action="#" method="post">
+            <form class="form" action="index.html" method="post">
                 <label class="labels" for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Digite seu email">
                 <label class="labels" for="password">Senha</label>
@@ -42,6 +42,7 @@
     </div>
 </body>
 
+<script src="../js/login.js"></script>
 
 <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth-compat.js"></script>
@@ -58,11 +59,6 @@
         };
         firebase.initializeApp(firebaseConfig);
 
-        //Promisses sao assincronas
-        firebase.auth().signInWithEmailAndPassword("teste@gmail.com", "123123").then( response => {
-            console.log("sucess", response);
-        }).catch(error => {
-            console.log("error", error);
-        })
+
 </script>
 </html>
