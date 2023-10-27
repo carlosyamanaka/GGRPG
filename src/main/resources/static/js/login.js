@@ -1,5 +1,3 @@
-
-
 const firebaseConfig = {
     apiKey: "AIzaSyCBFJia4j06OH8ZBhTzbju6yaVby-2cEik",
     authDomain: "ggrpg-2d938.firebaseapp.com",
@@ -11,7 +9,6 @@ const firebaseConfig = {
     measurementId: "G-KE5EDQ3443"
 };  
 firebase.initializeApp(firebaseConfig);
-
 
 function login() {
     const email = document.getElementById('email').value;
