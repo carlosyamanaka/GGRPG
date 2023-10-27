@@ -13,6 +13,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "/ficha_tp")
@@ -62,6 +63,7 @@ public class Ficha implements Serializable {
     private Pericia pericia;
 
     @ManyToMany(mappedBy = "ficha")
+    @Transient
     private List<Ritual> rituais;
 
     @OneToMany(mappedBy = "ficha")

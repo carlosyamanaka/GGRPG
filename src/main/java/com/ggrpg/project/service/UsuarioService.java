@@ -20,7 +20,7 @@ public class UsuarioService {
         return repository.findAll();
     }
 
-    public Usuario findById(Integer id){
+    public Usuario findById(Integer id) {
         Optional<Usuario> obj = repository.findById(id);
         if(obj.isPresent()) {
             return obj.get();
