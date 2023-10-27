@@ -22,3 +22,12 @@ function login() {
             console.log("error", error);
         })
 }
+
+function recoverPassword() {
+    const email = document.getElementById('email').value;
+    firebase.auth().sendPasswordResetEmail(email).then(() => {
+        alert('Email enviado com sucesso');
+    }).catch(error => {
+        alert(getErrorMessage(error));
+    });
+}
