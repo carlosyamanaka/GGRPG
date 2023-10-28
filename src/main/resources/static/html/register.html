@@ -20,16 +20,19 @@
 <body>
     <div class="container">
         <div class="login">
-            <img src="/img/logo.png" alt="Logo" class="logo-img">
+            <img src="../img/logo1.png" alt="Logo" class="logo-img">
             <p class="logo-text">Bem-vindo ao GGRPG</p>
-            <form class="form" action="#" method="post">
+            <form class="form" onsubmit="register(); return false;" method="post">
                 <label class="labels" for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Digite seu email" autocomplete="username">
-                <label class="labels" for="password">Digite a senha</label>
-                <input type="password" name="senha" id="senha" placeholder="Digite sua senha" autocomplete="current-password">
-                <label class="labels" for="password">Repita a senha</label>
-                <input type="password" name="confirmesenha" id="confirmesenha" placeholder="Confirme sua senha">
-                <button class="entrar" type="submit" class="btn btn-primary">Entrar</button>
+                <label class="labels" for="senha">Digite a senha</label>
+                <input type="password" name="senha" id="senha" oninput="senhaConfirmacao();" placeholder="Digite sua senha" autocomplete="current-password">
+                <label class="labels" for="confirmesenha">Repita a senha</label>
+                <input type="password" name="confirmesenha" id="confirmesenha" oninput="senhaConfirmacao();" placeholder="Confirme sua senha" autocomplete="new-password">
+                <div id="errosenhadif">
+                    <p class="errosenhadif">As senhas não são iguais. Tente novamente.</p>
+                </div>
+                <button class="entrar" type="submit" id="botaoEnvio" class="btn btn-primary">Entrar</button>
             </form>
             <div class="register-container">
                 <p class="register-text">Já tem conta?</p>
@@ -39,11 +42,14 @@
         </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
 <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth-compat.js"></script>
 
-<script src="../js/login.js"></script>
 <script src="../js/errors.js"></script>
-
+<script src="../js/login.js"></script>
+<script src="../js/firebase-init.js"></script>
 </html>

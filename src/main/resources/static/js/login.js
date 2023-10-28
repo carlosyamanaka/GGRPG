@@ -1,14 +1,3 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyCBFJia4j06OH8ZBhTzbju6yaVby-2cEik",
-    authDomain: "ggrpg-2d938.firebaseapp.com",
-    databaseURL: "https://ggrpg-2d938-default-rtdb.firebaseio.com",
-    projectId: "ggrpg-2d938",
-    storageBucket: "ggrpg-2d938.appspot.com",
-    messagingSenderId: "840757499698",
-    appId: "1:840757499698:web:716f4263d78adeb1e5292b",
-    measurementId: "G-KE5EDQ3443"
-};  
-firebase.initializeApp(firebaseConfig);
 
 function login() {
     const email = document.getElementById('email').value;
@@ -20,8 +9,7 @@ function login() {
         window.location.href = "index.html"
     }).catch(error => {
         const errorMessage = getErrorMessage(error);
-        document.getElementById('error-message').innerText = errorMessage;
-
+        toastr.error(errorMessage);
     });
 }
 
@@ -31,8 +19,40 @@ function recoverPassword() {
         alert('Email enviado com sucesso');
     }).catch(error => {
         const errorMessage = getErrorMessage(error);
-        document.getElementById('error-message').innerText = errorMessage;
+        toastr.error(errorMessage);
 
     });
+}
+
+const confsenha = document.getElementById('confirmesenha').value;
+
+function register() {
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
+    firebase.auth().createUserWithEmailAndPassword(
+        email, senha
+    ).then((response) => {  
+        window.location.href = "index.html"
+    }).catch(error => {
+        const errorMessage = getErrorMessage(error);
+        toastr.error(errorMessage);
+    });
+}
+
+function senhaConfirmacao(){
+    const senha = document.getElementById('senha').value;
+    const senhaConfirmacao = document.getElementById('confirmesenha').value;
+    const erro = document.getElementById('errosenhadif');       
+    if(senha!= senhaConfirmacao){
+        erro.style.display="block";
+        document.getElementById('botaoEnvio').disabled=true;
+        document.getElementById('botaoEnvio').style.backgroundColor="white";
+        document.getElementById('botaoEnvio').style.color="#007bff";
+    }else{  
+        erro.style.display="none";
+        document.getElementById('botaoEnvio').disabled=false;
+        document.getElementById('botaoEnvio').style.backgroundColor="#007bff";
+        document.getElementById('botaoEnvio').style.color="white";
+    }
 }
 
