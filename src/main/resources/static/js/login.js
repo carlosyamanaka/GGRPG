@@ -16,11 +16,13 @@ function login() {
     firebase.auth().signInWithEmailAndPassword(
         email, senha
     ).then((response) => {
-            console.log("sucesso", response);
-            window.location.href = "index.html"
-        }).catch(error => {
-            console.log("error", error);
-        })
+        console.log("sucesso", response);
+        window.location.href = "index.html"
+    }).catch(error => {
+        const errorMessage = getErrorMessage(error);
+        document.getElementById('error-message').innerText = errorMessage;
+
+    });
 }
 
 function recoverPassword() {
@@ -28,6 +30,9 @@ function recoverPassword() {
     firebase.auth().sendPasswordResetEmail(email).then(() => {
         alert('Email enviado com sucesso');
     }).catch(error => {
-        alert(getErrorMessage(error));
+        const errorMessage = getErrorMessage(error);
+        document.getElementById('error-message').innerText = errorMessage;
+
     });
 }
+
