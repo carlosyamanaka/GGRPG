@@ -91,3 +91,42 @@ p {
     font-size: 1.4rem;
 }
 
+
+#user{
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+}
+
+#menuUsuario{
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    z-index: 9999999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+
+#menuUsuario ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#menuUsuario ul li{
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.botaoUser{
+    border: 0;
+    background-color: white;
+    cursor: pointer;
+}
