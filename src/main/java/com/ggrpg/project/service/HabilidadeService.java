@@ -23,11 +23,31 @@ public class HabilidadeService {
     public Habilidade findById(Integer id) {
         Optional<Habilidade> obj = repository.findById(id);
 
-        if(obj.isPresent()) {
+        if (obj.isPresent()) {
             return obj.get();
         } else {
             throw new NoSuchElementException("Não foi possível encontrar o Ataque com o ID: " + id);
         }
+    }
+
+    public Habilidade insert(Habilidade obj) {
+        return repository.save(obj);
+    }
+
+    public void delete(Integer id) {
+        repository.deleteById(id);
+    }
+
+    public Habilidade update(Integer id, Habilidade obj) {
+        Habilidade entity = repository.getReferenceById(id);
+        updateData(entity, obj);
+        return repository.save(entity);
+    }
+
+    private void updateData(Habilidade entity, Habilidade obj) {
+        entity.setCusto(obj.getCusto());
+        entity.setDescricao(obj.getDescricao());
+        entity.setPagina(obj.getPagina());
     }
 
 }

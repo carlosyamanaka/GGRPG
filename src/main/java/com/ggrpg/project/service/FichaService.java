@@ -22,11 +22,31 @@ public class FichaService {
 
     public Ficha findById(Integer id) {
         Optional<Ficha> obj = repository.findById(id);
-        if(obj.isPresent()) {
+        if (obj.isPresent()) {
             return obj.get();
         } else {
             throw new NoSuchElementException("Não foi possível encontrar o Ataque com o ID: " + id);
         }
     }
 
+    public Ficha insert(Ficha obj) {
+        return repository.save(obj);
+    }
+
+    public void delete(Integer id) {
+        repository.deleteById(id);
+    }
+
+    public Ficha update(Integer id, Ficha obj) {
+        Ficha entity = repository.getReferenceById(id);
+        updateData(entity, obj);
+        return repository.save(entity);
+    }
+
+    private void updateData(Ficha entity, Ficha obj) {
+        entity.setNomeDoPersonagem(obj.getNomeDoPersonagem());
+        entity.setNomeDoJogador(obj.getNomeDoJogador());
+        entity.setSistema(obj.getSistema());
+
+    }
 }

@@ -7,8 +7,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import com.ggrpg.project.entity.Ataque;
-import com.ggrpg.project.entity.Ficha;
 import com.ggrpg.project.entity.Usuario;
 import com.ggrpg.project.repository.AtaqueRepository;
 import com.ggrpg.project.repository.AtributoRepository;
@@ -21,8 +19,8 @@ import com.ggrpg.project.repository.PropriedadeRepository;
 import com.ggrpg.project.repository.RitualRepository;
 import com.ggrpg.project.repository.UsuarioRepository;
 
-@RestController
-@RequestMapping(value = "/fichas")
+
+@Profile()
 public class fichaAteste {
 
     // Essa classe serve para fazer o database seeding (popular o banco de dados com

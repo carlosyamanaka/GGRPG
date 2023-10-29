@@ -25,4 +25,28 @@ public class ItemService {
         return obj.get();
     }
 
+    public Item insert(Item obj) {
+        return repository.save(obj);
+    }
+
+    public void delete(Integer id) {
+        repository.deleteById(id);
+    }
+
+    public Item update(Integer id, Item obj) {
+        Item entity = repository.getReferenceById(id);
+        updateData(entity, obj);
+        return repository.save(entity);
+    }
+
+    private void updateData(Item entity, Item obj) {
+        entity.setNome(obj.getNome());
+        entity.setEspaco(obj.getEspaco());
+        entity.setModificadores(obj.getModificadores());
+        entity.setTeste(obj.getTeste());
+        entity.setDano(obj.getDano());
+        entity.setAlcance(obj.getAlcance());
+        entity.setEfeito(obj.getEfeito());
+    }
+
 }

@@ -25,4 +25,25 @@ public class InventarioService {
         return obj.get();
     }
 
+    public Inventario insert(Inventario obj) {
+        return repository.save(obj);
+    }
+
+    public void delete(Integer id) {
+        repository.deleteById(id);
+    }
+
+    public Inventario update(Integer id, Inventario obj) {
+        Inventario entity = repository.getReferenceById(id);
+        updateData(entity, obj);
+        return repository.save(entity);
+    }
+
+    private void updateData(Inventario entity, Inventario obj) {
+        entity.setCapacidade(obj.getCapacidade());
+        entity.setLotacao(obj.getLotacao());
+        entity.setCapacidade_cat(obj.getCapacidade_cat());
+        entity.setLimite_credito(obj.getLimite_credito());
+    }
+
 }
