@@ -22,6 +22,7 @@ body {
 }
 
 .container {
+    background-image: url(../img/background-floresta.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -33,13 +34,68 @@ body {
 .login {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background: #202020f6;
-    box-shadow: 0 15px 25px rgba(24, 24, 24, 0.1);
-    border-radius: 10px;
-    width: 416px;
+    box-shadow: 0 15px 0px rgba(24, 24, 24, 0.1);
+    width: 33vw;
     padding: 35px;
     font-size: 14px;
+    height: 85vh;
+}
+
+.inicio {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lateral-image {
+    border-radius: 0 10px 10px 0;
+    background-image: url(../img/image-_KGlSJLvd-transformed.png);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 15px 0px rgba(24, 24, 24, 0.1);
+    width: 40vw;
+    height: 85vh;
+}
+
+.google-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .6rem;
+    background-color: #333;
+    border: none;
+    padding: .4rem .9rem;
+    border-radius: 4px;
+
+}
+
+.site-login {
+    border-radius: 10px 0 0 10px;
+    background: #202020;
+}
+
+.divisoria {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .7rem 0;
+  }
+  
+.line {
+    flex: 1;
+    border: #007bff;
+    border-bottom: .5px solid rgb(255, 255, 255);
+    margin: 0 10px;
+  }
+  
+.ou {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.login-alt-text {
+    color: white;
 }
 
 .login form {
@@ -77,11 +133,11 @@ body {
     height: auto;
 }
 
-.logo-text {
+.aux-text {
     color: #f0f0f0;
     margin-bottom: 1.3rem;
     font-family: 'Rubik', sans-serif;
-    font-size: 1.2rem;
+    font-size: .9rem;
     font-weight: 600;
 }
 
