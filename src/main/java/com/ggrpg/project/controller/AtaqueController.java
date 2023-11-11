@@ -42,8 +42,8 @@ public class AtaqueController {
         return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<Ataque> findById(@PathVariable Integer id) {
+    @GetMapping(value = "/{id_ataque}")
+    public ResponseEntity<Ataque> findById(@PathVariable("id_ataque") Integer id) {
         Ataque obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
@@ -55,13 +55,13 @@ public class AtaqueController {
         return ResponseEntity.created(uri).body(obj);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/{id_ataque}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/{id_ataque}")
     public ResponseEntity<Ataque> update(@PathVariable Integer id, @RequestBody Ataque obj) {
         obj = service.update(id, obj);
         return ResponseEntity.ok().body(obj);

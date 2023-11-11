@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import com.ggrpg.project.entity.Ficha;
 import com.ggrpg.project.entity.Usuario;
 import com.ggrpg.project.repository.AtaqueRepository;
 import com.ggrpg.project.repository.AtributoRepository;
@@ -19,8 +20,8 @@ import com.ggrpg.project.repository.PropriedadeRepository;
 import com.ggrpg.project.repository.RitualRepository;
 import com.ggrpg.project.repository.UsuarioRepository;
 
-
-@Profile()
+@Configuration
+@Profile("test")
 public class fichaAteste {
 
     // Essa classe serve para fazer o database seeding (popular o banco de dados com
@@ -63,6 +64,17 @@ public class fichaAteste {
         Usuario u3 = new Usuario(3, "Vinicius", "123", "vinicius@gmail.com");
 
         usuarioRepository.saveAll(Arrays.asList(u1, u2, u3));
+
+        Ficha f1 = new Ficha(1, "Arakaki", "Carlos", "Ordem");
+        Ficha f2 = new Ficha(2, "AnotherName", "AnotherPlayer", "AnotherSystem");
+        Ficha f3 = new Ficha(3, "YetAnotherName", "YetAnotherPlayer", "YetAnotherSystem");
+
+        f1.setUsuario(u2);
+        f2.setUsuario(u2);
+        f3.setUsuario(u1);
+
+        fichaRepository.saveAll(Arrays.asList(f1, f2, f3));
+
     }
 
 }

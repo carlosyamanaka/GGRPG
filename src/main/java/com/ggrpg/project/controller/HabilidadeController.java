@@ -31,8 +31,8 @@ public class HabilidadeController {
         return ResponseEntity.ok().body(obj);
     }
 
-    @GetMapping(name = "/{id}")
-    public ResponseEntity<Habilidade> findById(@PathVariable Integer id) {
+    @GetMapping(value = "/{id_habilidade}")
+    public ResponseEntity<Habilidade> findById(@PathVariable("id_habilidade") Integer id) {
         Habilidade obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
@@ -44,13 +44,13 @@ public class HabilidadeController {
         return ResponseEntity.created(uri).body(obj);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/{id_habilidade}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/{id_habilidade}")
     public ResponseEntity<Habilidade> update(@PathVariable Integer id, @RequestBody Habilidade obj) {
         obj = service.update(id, obj);
         return ResponseEntity.ok().body(obj);

@@ -31,8 +31,8 @@ public class FichaController {
         return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping(name = "/{id}")
-    public ResponseEntity<Ficha> findById(@PathVariable Integer id) {
+    @GetMapping(value = "/{id_ficha}")
+    public ResponseEntity<Ficha> findById(@PathVariable("id_ficha") Integer id) {
         Ficha obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
@@ -44,13 +44,13 @@ public class FichaController {
         return ResponseEntity.created(uri).body(obj);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/{id_ficha}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/{id_ficha}")
     public ResponseEntity<Ficha> update(@PathVariable Integer id, @RequestBody Ficha obj) {
         obj = service.update(id, obj);
         return ResponseEntity.ok().body(obj);

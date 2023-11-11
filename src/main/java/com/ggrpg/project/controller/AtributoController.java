@@ -31,8 +31,9 @@ public class AtributoController {
         return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping(name = "/{id}")
-    public ResponseEntity<Atributo> findById(@PathVariable Integer id) {
+    @GetMapping(value = "/{id_atributo}") // Use "value" to specify the URL path
+    public ResponseEntity<Atributo> findById(@PathVariable("id_atributo") Integer id) { // Specify the variable name in
+        // @PathVariable
         Atributo obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
@@ -44,13 +45,13 @@ public class AtributoController {
         return ResponseEntity.created(uri).body(obj);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/{id_atributo}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/{id_atributo}")
     public ResponseEntity<Atributo> update(@PathVariable Integer id, @RequestBody Atributo obj) {
         obj = service.update(id, obj);
         return ResponseEntity.ok().body(obj);
