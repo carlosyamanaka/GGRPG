@@ -22,10 +22,33 @@ public class RitualService {
 
     public Ritual findById(Integer id) {
         Optional<Ritual> obj = repository.findById(id);
-        if(obj.isPresent()) {
+        if (obj.isPresent()) {
             return obj.get();
         } else {
             throw new NoSuchElementException("Não foi possível encontrar o Ataque com o ID: " + id);
         }
+    }
+
+    public Ritual insert(Ritual obj) {
+        return repository.save(obj);
+    }
+
+    public void delete(Integer id) {
+        repository.deleteById(id);
+    }
+
+    public Ritual update(Integer id, Ritual obj) {
+        Ritual entity = repository.getReferenceById(id);
+        updateData(entity, obj);
+        return repository.save(entity);
+    }
+
+    private void updateData(Ritual entity, Ritual obj) {
+        entity.setCirculo(obj.getCirculo());
+        entity.setDescricao(obj.getDescricao());
+        entity.setCusto(obj.getCusto());
+        entity.setPagina(obj.getPagina());
+        entity.setDt(obj.getDt());
+
     }
 }
