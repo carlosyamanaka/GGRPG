@@ -39,6 +39,7 @@ public class HabilidadeController {
 
     @PostMapping
     public ResponseEntity<Habilidade> insert(@RequestBody Habilidade obj) {
+        service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_habilidade())
                 .toUri();
         return ResponseEntity.created(uri).body(obj);

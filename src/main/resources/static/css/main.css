@@ -5,11 +5,8 @@
 }
 
 body {
-    display: flex;
-    align-items: center;
     flex-direction: column;
-    background-color: rgb(155, 138, 138);
-    background-image: url(../img/background-index.png);
+    background-color: rgb(31, 31, 31);
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Roboto', sans-serif;
@@ -36,54 +33,19 @@ p {
 }
 
 #header {
+    background-color: rgb(12, 12, 12);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 80vw;
+    justify-content: space-around;
+    width: 100vw;
     padding: .5rem 0;
 }
 
-#container {
-    width: 80vw;
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    background-color: white;
-    border: 1px solid rgba(167, 167, 167, 0.877);
-}
-
-#content {
-    width: 100%;
-    margin: 1rem;
-    
-}
-
-.buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1.5rem;
-    padding: .04rem 0;
-    border-bottom: 1px solid rgba(167, 167, 167, 0.877);
-}
-
-.statusbutton {
-    padding: 0 1px 2px 0;
-    border-bottom:  4px solid rgba(0, 0, 255, 0);
-    text-decoration: none;
-    color: grey;
-}
-
-.statusbutton:hover {
-    border-color: rgb(23, 23, 255);
-    transition: all .4s ease-in-out;
-}
-
 .char {
-    background-color: rgb(86, 86, 241);
     display: flex;
-    justify-content: center;
+    justify-content: start;
     margin-top: 6rem;
-    text-transform: uppercase;
+    margin-left: 2rem;
 }
 
 .char-text {
@@ -91,42 +53,3 @@ p {
     font-size: 1.4rem;
 }
 
-
-#user{
-    font-size: 2em;
-    color: white;
-    cursor: pointer;
-}
-
-#menuUsuario{
-    display: block;
-    position: absolute;
-    background-color: #fff;
-    z-index: 9999999;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    border-radius: 4px;
-    padding: 10px;
-}
-
-
-#menuUsuario ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-}
-
-#menuUsuario ul li{
-    padding: 0;
-    border: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.botaoUser{
-    border: 0;
-    background-color: white;
-    cursor: pointer;
-}

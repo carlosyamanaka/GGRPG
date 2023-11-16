@@ -22,7 +22,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "/ficha_tp")
+@Table(name = "ficha_tp")
 public class Ficha implements Serializable {
 
     private static final long serialVersionUID = 1L;

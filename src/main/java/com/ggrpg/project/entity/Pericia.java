@@ -19,7 +19,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "/pericia_tp")
+@Table(name = "pericia_tp")
 public class Pericia implements Serializable {
 
     private static final long serialVersionUID = 1L;

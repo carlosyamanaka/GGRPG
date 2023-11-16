@@ -40,6 +40,7 @@ public class AtributoController {
 
     @PostMapping
     public ResponseEntity<Atributo> insert(@RequestBody Atributo obj) {
+        service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_atributo())
                 .toUri();
         return ResponseEntity.created(uri).body(obj);

@@ -18,7 +18,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "/habilidade_tp")
+@Table(name = "habilidade_tp")
 public class Habilidade implements Serializable {
 
     private static final long serialVersionUID = 1L;

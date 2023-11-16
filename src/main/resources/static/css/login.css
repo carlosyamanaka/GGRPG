@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-    background-image: url(../img/background-floresta.jpg);
+    background-image: url(../img/background2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;
@@ -38,7 +38,7 @@ body {
     width: 33vw;
     padding: 35px;
     font-size: 14px;
-    height: 85vh;
+    height: 89vh;
 }
 
 .inicio {
@@ -54,14 +54,14 @@ body {
     background-position: center;
     box-shadow: 0 15px 0px rgba(24, 24, 24, 0.1);
     width: 40vw;
-    height: 85vh;
+    height: 89vh;
 }
 
 .google-login {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: .6rem;
+    gap: .37rem;
     background-color: #333;
     border: none;
     padding: .4rem .9rem;
@@ -133,6 +133,14 @@ body {
     height: auto;
 }
 
+.logo-text {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
 .aux-text {
     color: #f0f0f0;
     margin-bottom: 1.3rem;
@@ -162,7 +170,7 @@ form [type="submit"] {
 }
 
 .entrar {
-    margin-top: 1rem;
+    margin-top: .5rem;
 }
 
 form [type="submit"]:hover {
@@ -198,7 +206,7 @@ form [type="submit"]:hover {
 .register-container {
     display: flex;
     align-items: center; /* Alinha verticalmente */
-    margin-top: 1rem;
+    padding: .9rem 0;
 }
 
 .register-text {

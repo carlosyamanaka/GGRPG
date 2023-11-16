@@ -19,7 +19,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "/ritual_tp")
+@Table(name = "ritual_tp")
 public class Ritual implements Serializable {
 
     private static final long serialVersionUID = 1L;

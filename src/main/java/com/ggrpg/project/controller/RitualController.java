@@ -39,6 +39,7 @@ public class RitualController {
 
     @PostMapping
     public ResponseEntity<Ritual> insert(@RequestBody Ritual obj) {
+        service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_ritual())
                 .toUri();
         return ResponseEntity.created(uri).body(obj);

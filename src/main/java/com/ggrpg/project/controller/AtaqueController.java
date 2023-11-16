@@ -52,6 +52,7 @@ public class AtaqueController {
 
     @PostMapping
     public ResponseEntity<Ataque> insert(@RequestBody Ataque obj) {
+        service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_ataque())
                 .toUri();
         return ResponseEntity.created(uri).body(obj);

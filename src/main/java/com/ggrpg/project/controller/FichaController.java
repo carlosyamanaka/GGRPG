@@ -39,6 +39,7 @@ public class FichaController {
 
     @PostMapping
     public ResponseEntity<Ficha> insert(@RequestBody Ficha obj) {
+        service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_ficha())
                 .toUri();
         return ResponseEntity.created(uri).body(obj);

@@ -38,6 +38,7 @@ public class PericiaController {
 
     @PostMapping
     public ResponseEntity<Pericia> insert(@RequestBody Pericia obj) {
+        service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_pericia())
                 .toUri();
         return ResponseEntity.created(uri).body(obj);

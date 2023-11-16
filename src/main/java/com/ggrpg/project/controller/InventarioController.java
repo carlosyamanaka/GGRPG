@@ -39,6 +39,7 @@ public class InventarioController {
 
     @PostMapping
     public ResponseEntity<Inventario> insert(@RequestBody Inventario obj) {
+        service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_inventario())
                 .toUri();
         return ResponseEntity.created(uri).body(obj);

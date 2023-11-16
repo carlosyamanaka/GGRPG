@@ -39,6 +39,7 @@ public class PropriedadeController {
 
     @PostMapping
     public ResponseEntity<Propriedade> insert(@RequestBody Propriedade obj) {
+        service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_propriedade())
                 .toUri();
         return ResponseEntity.created(uri).body(obj);

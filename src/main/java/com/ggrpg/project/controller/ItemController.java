@@ -38,6 +38,7 @@ public class ItemController {
 
     @PostMapping
     public ResponseEntity<Item> insert(@RequestBody Item obj) {
+        service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId_item())
                 .toUri();
         return ResponseEntity.created(uri).body(obj);

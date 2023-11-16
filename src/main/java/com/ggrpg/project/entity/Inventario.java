@@ -19,7 +19,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "inventadio_tp")
+@Table(name = "inventario_tp")
 public class Inventario implements Serializable {
 
     @Id
