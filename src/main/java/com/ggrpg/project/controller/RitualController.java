@@ -31,8 +31,8 @@ public class RitualController {
         return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping(name = "/{id}")
-    public ResponseEntity<Ritual> findById(@PathVariable Integer id) {
+    @GetMapping(value = "/{id_ritual}")
+    public ResponseEntity<Ritual> findById(@PathVariable("id_ritual") Integer id) {
         Ritual obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
@@ -44,13 +44,13 @@ public class RitualController {
         return ResponseEntity.created(uri).body(obj);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/{id_ritual}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/{id_ritual}")
     public ResponseEntity<Ritual> update(@PathVariable Integer id, @RequestBody Ritual obj) {
         obj = service.update(id, obj);
         return ResponseEntity.ok().body(obj);

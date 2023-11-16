@@ -19,7 +19,7 @@ import com.ggrpg.project.entity.Ficha;
 import com.ggrpg.project.service.FichaService;
 
 @RestController
-@RequestMapping(name = "/fichas")
+@RequestMapping(value = "/fichas")
 public class FichaController {
 
     @Autowired

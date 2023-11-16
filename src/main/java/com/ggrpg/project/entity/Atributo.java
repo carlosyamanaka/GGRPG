@@ -9,7 +9,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "/atributo_tp")
 public class Atributo implements Serializable {
@@ -18,7 +24,7 @@ public class Atributo implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer id_atributo;
     private Integer forca;
     private Integer agilidade;
     private Integer intelecto;
@@ -26,94 +32,17 @@ public class Atributo implements Serializable {
     private Integer presenca;
 
     @OneToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "id_ficha", nullable = false)
     private Ficha ficha;
 
-    public Atributo() {
-
-    }
-
-    public static long getSerialversionuid() {
-        return serialVersionUID;
-    }
-
-    public Integer getForca() {
-        return forca;
-    }
-
-    public void setForca(Integer forca) {
-        this.forca = forca;
-    }
-
-    public Integer getAgilidade() {
-        return agilidade;
-    }
-
-    public void setAgilidade(Integer agilidade) {
-        this.agilidade = agilidade;
-    }
-
-    public Integer getIntelecto() {
-        return intelecto;
-    }
-
-    public void setIntelecto(Integer intelecto) {
-        this.intelecto = intelecto;
-    }
-
-    public Integer getVigor() {
-        return vigor;
-    }
-
-    public void setVigor(Integer vigor) {
-        this.vigor = vigor;
-    }
-
-    public Integer getPresenca() {
-        return presenca;
-    }
-
-    public void setPresenca(Integer presenca) {
-        this.presenca = presenca;
-    }
-
-    public Atributo(Integer id, Integer forca, Integer agilidade, Integer intelecto, Integer vigor,
+    public Atributo(Integer id_atributo, Integer forca, Integer agilidade, Integer intelecto, Integer vigor,
             Integer presenca) {
-        this.id = id;
+        this.id_atributo = id_atributo;
         this.forca = forca;
         this.agilidade = agilidade;
         this.intelecto = intelecto;
         this.vigor = vigor;
         this.presenca = presenca;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Atributo other = (Atributo) obj;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        return true;
     }
 
 }

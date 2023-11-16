@@ -19,7 +19,7 @@ import com.ggrpg.project.entity.Inventario;
 import com.ggrpg.project.service.InventarioService;
 
 @RestController
-@RequestMapping(name = "/inventarios")
+@RequestMapping(value = "/inventarios")
 public class InventarioController {
 
     @Autowired
@@ -31,8 +31,8 @@ public class InventarioController {
         return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping(name = "/{id}")
-    public ResponseEntity<Inventario> findById(@PathVariable Integer id) {
+    @GetMapping(value = "/{id_inventario}")
+    public ResponseEntity<Inventario> findById(@PathVariable("id_inventario") Integer id) {
         Inventario obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
@@ -44,13 +44,13 @@ public class InventarioController {
         return ResponseEntity.created(uri).body(obj);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/{id_inventario}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/{id_inventario}")
     public ResponseEntity<Inventario> update(@PathVariable Integer id, @RequestBody Inventario obj) {
         obj = service.update(id, obj);
         return ResponseEntity.ok().body(obj);

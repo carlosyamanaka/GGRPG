@@ -9,7 +9,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "/usuario_tp")
 public class Usuario implements Serializable {
@@ -33,59 +39,6 @@ public class Usuario implements Serializable {
         this.username = username;
         this.senha = senha;
         this.email = email;
-    }
-
-    public Integer getCusto() {
-        return custo;
-    }
-
-    public void setCusto(Integer custo) {
-        this.custo = custo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public Integer getPagina() {
-        return pagina;
-    }
-
-    public void setPagina(Integer pagina) {
-        this.pagina = pagina;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Usuario other = (Usuario) obj;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        return true;
     }
 
 }

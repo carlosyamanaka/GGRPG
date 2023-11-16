@@ -19,7 +19,7 @@ import com.ggrpg.project.entity.Pericia;
 import com.ggrpg.project.service.PericiaService;
 
 @RestController
-@RequestMapping(name = "/pericias")
+@RequestMapping(value = "/pericias")
 public class PericiaController {
     @Autowired
     private PericiaService service;
@@ -30,8 +30,8 @@ public class PericiaController {
         return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping(name = "/{id}")
-    public ResponseEntity<Pericia> findById(@PathVariable Integer id) {
+    @GetMapping(value = "/{id_pericia}")
+    public ResponseEntity<Pericia> findById(@PathVariable("id_pericia") Integer id) {
         Pericia obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
@@ -43,13 +43,13 @@ public class PericiaController {
         return ResponseEntity.created(uri).body(obj);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/{id_pericia}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/{id_pericia}")
     public ResponseEntity<Pericia> update(@PathVariable Integer id, @RequestBody Pericia obj) {
         obj = service.update(id, obj);
         return ResponseEntity.ok().body(obj);

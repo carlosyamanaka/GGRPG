@@ -9,7 +9,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
 @Entity
 @Table(name = "/propriedade_tp")
 public class Propriedade implements Serializable {
@@ -18,7 +24,7 @@ public class Propriedade implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer id_propriedade;
     private String origem;
     private String classe;
     private String trilha;
@@ -32,18 +38,13 @@ public class Propriedade implements Serializable {
     private String resistencia;
 
     @OneToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "id_ficha", nullable = false)
     private Ficha ficha;
 
-    public Propriedade() {
-
-    }
-
-    public Propriedade(Integer id, String origem, String classe, String trilha, Integer nex,
-            Integer peRodada,
-            Integer peTot, Integer pvTot, Integer deslocamento, Integer sanidadeTot, Integer defesa,
+    public Propriedade(Integer id_propriedade, String origem, String classe, String trilha, Integer nex,
+            Integer peRodada, Integer peTot, Integer pvTot, Integer deslocamento, Integer sanidadeTot, Integer defesa,
             String resistencia) {
-        this.id = id;
+        this.id_propriedade = id_propriedade;
         this.origem = origem;
         this.classe = classe;
         this.trilha = trilha;
@@ -56,128 +57,5 @@ public class Propriedade implements Serializable {
         this.defesa = defesa;
         this.resistencia = resistencia;
     }
-
-    public String getOrigem() {
-        return origem;
-    }
-
-    public void setOrigem(String origem) {
-        this.origem = origem;
-    }
-
-    public String getClasse() {
-        return classe;
-    }
-
-    public void setClasse(String classe) {
-        this.classe = classe;
-    }
-
-    public String getTrilha() {
-        return trilha;
-    }
-
-    public void setTrilha(String trilha) {
-        this.trilha = trilha;
-    }
-
-    public Integer getNex() {
-        return nex;
-    }
-
-    public void setNex(Integer nex) {
-        this.nex = nex;
-    }
-
-    public Integer getPeRodada() {
-        return peRodada;
-    }
-
-    public void setPeRodada(Integer peRodada) {
-        this.peRodada = peRodada;
-    }
-
-    public Integer getPeTot() {
-        return peTot;
-    }
-
-    public void setPeTot(Integer peTot) {
-        this.peTot = peTot;
-    }
-
-    public Integer getPvTot() {
-        return pvTot;
-    }
-
-    public void setPvTot(Integer pvTot) {
-        this.pvTot = pvTot;
-    }
-
-    public Integer getDeslocamento() {
-        return deslocamento;
-    }
-
-    public void setDeslocamento(Integer deslocamento) {
-        this.deslocamento = deslocamento;
-    }
-
-    public Integer getSanidadeTot() {
-        return sanidadeTot;
-    }
-
-    public void setSanidadeTot(Integer sanidadeTot) {
-        this.sanidadeTot = sanidadeTot;
-    }
-
-    public Integer getDefesa() {
-        return defesa;
-    }
-
-    public void setDefesa(Integer defesa) {
-        this.defesa = defesa;
-    }
-
-    public String getResistencia() {
-        return resistencia;
-    }
-
-    public void setResistencia(String resistencia) {
-        this.resistencia = resistencia;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Propriedade other = (Propriedade) obj;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        return true;
-    }
-
-    /*
-     * public void setId(Integer id) {
-     * this.id = id;
-     * }
-     */
 
 }

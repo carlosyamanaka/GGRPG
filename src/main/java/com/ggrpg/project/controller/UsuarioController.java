@@ -19,7 +19,7 @@ import com.ggrpg.project.entity.Usuario;
 import com.ggrpg.project.service.UsuarioService;
 
 @RestController
-@RequestMapping
+@RequestMapping(value = "/usuarios")
 public class UsuarioController {
 
     @Autowired
@@ -31,8 +31,8 @@ public class UsuarioController {
         return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping(name = "/{id}")
-    public ResponseEntity<Usuario> findById(@PathVariable Integer id) {
+    @GetMapping(value = "/{id_usuario}")
+    public ResponseEntity<Usuario> findById(@PathVariable("id_usuario") Integer id) {
         Usuario obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
@@ -44,13 +44,13 @@ public class UsuarioController {
         return ResponseEntity.created(uri).body(obj);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/{id_usuario}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/{id_usuario}")
     public ResponseEntity<Usuario> update(@PathVariable Integer id, @RequestBody Usuario obj) {
         obj = service.update(id, obj);
         return ResponseEntity.ok().body(obj);

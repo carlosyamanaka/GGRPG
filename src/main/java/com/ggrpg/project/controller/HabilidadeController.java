@@ -19,7 +19,7 @@ import com.ggrpg.project.entity.Habilidade;
 import com.ggrpg.project.service.HabilidadeService;
 
 @RestController
-@RequestMapping(name = "/habilidades")
+@RequestMapping(value = "/habilidades")
 public class HabilidadeController {
 
     @Autowired

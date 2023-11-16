@@ -19,7 +19,7 @@ import com.ggrpg.project.entity.Item;
 import com.ggrpg.project.service.ItemService;
 
 @RestController
-@RequestMapping(name = "/pericias")
+@RequestMapping(value = "/items")
 public class ItemController {
     @Autowired
     private ItemService service;
@@ -30,8 +30,8 @@ public class ItemController {
         return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping(name = "/{id}")
-    public ResponseEntity<Item> findById(@PathVariable Integer id) {
+    @GetMapping(value = "/{id_item}")
+    public ResponseEntity<Item> findById(@PathVariable("id_item") Integer id) {
         Item obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
@@ -43,13 +43,13 @@ public class ItemController {
         return ResponseEntity.created(uri).body(obj);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/{id_item}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/{id_item}")
     public ResponseEntity<Item> update(@PathVariable Integer id, @RequestBody Item obj) {
         obj = service.update(id, obj);
         return ResponseEntity.ok().body(obj);

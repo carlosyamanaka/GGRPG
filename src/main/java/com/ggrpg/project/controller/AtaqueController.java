@@ -26,6 +26,8 @@ import com.ggrpg.project.service.AtaqueService;
 //c. Autowired: Injeção de dependencia automática -> É depreciado, um péssimo costume, mas pela simplicidade do projeto optei por manter// pelo menos por enquanto. 
 //d. GetMapping: Lidar com requisições HTTP GET 
 
+//Foram retiradas as implementações e substituídas por annotations, caso deseje voltar apenas crie equals e hashCodes para os id's e Constructors para os atributos, sem as relações.
+
 @RestController
 @RequestMapping(value = "/ataques")
 public class AtaqueController {

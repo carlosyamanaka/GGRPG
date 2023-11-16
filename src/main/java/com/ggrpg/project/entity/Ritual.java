@@ -1,18 +1,23 @@
 package com.ggrpg.project.entity;
 
 import java.io.Serializable;
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "/ritual_tp")
 public class Ritual implements Serializable {
@@ -21,107 +26,24 @@ public class Ritual implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer id_ritual;
     private Integer circulo;
     private String descricao;
     private Integer custo;
     private Integer pagina;
     private Integer dt;
 
-    @JsonIgnore
-    @ManyToMany
-    @JoinColumn(name = "id", nullable = false)
-    private List<Ficha> fichas;
+    @ManyToOne
+    @JoinColumn(name = "id_ficha", nullable = false)
+    private Ficha ficha;
 
-    public Ritual() {
-
-    }
-
-    public Ritual(Integer id, Integer circulo, String descricao, Integer custo, Integer pagina) {
-        this.id = id;
+    public Ritual(Integer id_ritual, Integer circulo, String descricao, Integer custo, Integer pagina, Integer dt) {
+        this.id_ritual = id_ritual;
         this.circulo = circulo;
         this.descricao = descricao;
         this.custo = custo;
         this.pagina = pagina;
-    }
-
-    public static long getSerialversionuid() {
-        return serialVersionUID;
-    }
-
-    public Integer getCirculo() {
-        return circulo;
-    }
-
-    public void setCirculo(Integer circulo) {
-        this.circulo = circulo;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public Integer getCusto() {
-        return custo;
-    }
-
-    public void setCusto(Integer custo) {
-        this.custo = custo;
-    }
-
-    public Integer getPagina() {
-        return pagina;
-    }
-
-    public void setPagina(Integer pagina) {
-        this.pagina = pagina;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    /*
-     * public void setId(Integer id) {
-     * this.id = id;
-     * }
-     */
-
-    public Integer getDt() {
-        return dt;
-    }
-
-    public void setDt(Integer dt) {
         this.dt = dt;
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Ritual other = (Ritual) obj;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        return true;
     }
 
 }

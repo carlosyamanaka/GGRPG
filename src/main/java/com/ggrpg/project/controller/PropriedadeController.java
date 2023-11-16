@@ -19,7 +19,7 @@ import com.ggrpg.project.entity.Propriedade;
 import com.ggrpg.project.service.PropriedadeService;
 
 @RestController
-@RequestMapping(name = "/propriedades")
+@RequestMapping(value = "/propriedades")
 public class PropriedadeController {
 
     @Autowired
@@ -31,8 +31,8 @@ public class PropriedadeController {
         return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping(name = "/{id}")
-    public ResponseEntity<Propriedade> findById(@PathVariable Integer id) {
+    @GetMapping(value = "/{id_propriedade}")
+    public ResponseEntity<Propriedade> findById(@PathVariable("id_propriedade") Integer id) {
         Propriedade obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
@@ -44,13 +44,13 @@ public class PropriedadeController {
         return ResponseEntity.created(uri).body(obj);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(value = "/{id_propriedade}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/{id_propriedade}")
     public ResponseEntity<Propriedade> update(@PathVariable Integer id, @RequestBody Propriedade obj) {
         obj = service.update(id, obj);
         return ResponseEntity.ok().body(obj);
