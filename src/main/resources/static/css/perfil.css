@@ -5,23 +5,17 @@
 }
 
 body {
-    display: flex;
-    align-items: center;
     flex-direction: column;
-    background-color: rgb(155, 138, 138);
-    background-image: url(../img/background-index.png);
+    background-color: rgb(12, 12, 12);
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Roboto', sans-serif;
 }
 
-#header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80vw;
-    padding: .5rem 0;
+p {
+    color: white;
 }
+
 .logo {
     display: flex;
     align-items: center;
@@ -36,7 +30,15 @@ body {
     font-weight: 500;
     font-size: 24px;
     padding-left: .4rem;
-    color: white;
+}
+
+#header {
+    background-color: rgb(31, 31, 31);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: .2rem 3.8rem;
 }
 
 #logout {
@@ -61,4 +63,8 @@ body {
     border: 2px solid #333;
     padding: 1em;
     border-radius: 5px;
+}
+
+.no-decoration {
+    text-decoration: none;
 }

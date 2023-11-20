@@ -128,3 +128,70 @@ p {
     text-decoration: none;
 }
 
+.steps {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.step {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.meia-pagina1 {
+    margin-left: 4rem;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+.meia-pagina2 {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap: .5rem;
+    margin-left: 4rem;
+}
+
+.step1 {
+    font-size: 24px;
+    text-align: justify;
+}
+
+.atributos {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+
+.atributo {
+    color: white;
+    height: 30px;
+    width: 30px;
+}
+
+.atributo-input {
+    width: 30px;
+    border: none;
+    margin-left: .7rem;
+    background-color: rgb(129, 129, 129);
+    color: white;
+    padding-left: 8px;
+}
+
+.text1 {
+    margin: 1rem 6rem;
+    font-size: 16px;
+}
+
+.text2 {
+    margin: 1rem 6rem;
+    font-weight: 600;
+    font-size: 16px;
+}
+
