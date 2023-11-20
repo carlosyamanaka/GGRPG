@@ -6,7 +6,7 @@
 
 body {
     flex-direction: column;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(12, 12, 12);
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Roboto', sans-serif;
@@ -33,12 +33,12 @@ p {
 }
 
 #header {
-    background-color: rgb(12, 12, 12);
+    background-color: rgb(31, 31, 31);
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width: 100vw;
-    padding: .5rem 0;
+    justify-content: space-between;
+    width: 100%;
+    padding: .2rem 3.8rem;
 }
 
 .char {
@@ -51,5 +51,80 @@ p {
 .char-text {
     font-weight: 500;
     font-size: 1.4rem;
+}
+
+.conteudo-site {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.texto-intro {
+    color: white;
+    text-align: center;
+    letter-spacing: .1rem;
+}
+
+#img-intro {
+    margin-top: 2rem;
+    width: 180px;
+}
+
+.btn-core {
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    padding: .72rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #A347FF;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.divisoria {
+    color: #1d1d1d;
+    margin: 0 auto;
+    width: 85%;
+    line-height: 1.6;
+    border-top: 1px solid;
+}
+
+.espacamento {
+    margin-top: 3rem;
+}
+
+.tit-ficha {
+    color: white;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    font-size: 2.4rem;
+    text-decoration: underline;
+    text-decoration-color: #a347ff;
+}
+
+.text-ficha {
+
+}
+
+.block {
+    margin-left: 4rem;
+}
+
+.agentes{
+    margin: 4rem 0 2rem 0;
+    font-size: 20px;
+}
+
+.new-agent {
+    display: flex;
+    justify-content: end;
+    padding: 2rem;
+}
+
+.no-decoration{
+    text-decoration: none;
 }
 
