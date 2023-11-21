@@ -40,10 +40,10 @@ public class Ficha implements Serializable {
     private Usuario usuario;
 
     @OneToOne
-    private Propriedade propriedade;
+    private Atributo atributo;
 
     @OneToOne
-    private Atributo atributo;
+    private Propriedade propriedade;
 
     @OneToOne(mappedBy = "ficha")
     private Inventario inventario;

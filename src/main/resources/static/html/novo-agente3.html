@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GGRPG</title>
+
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Rubik -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="header">
+        <a class="no-decoration" href="index.html">
+            <div class="logo">
+                <img class="logo-img" src="../img/logo1.png" alt="Logo">
+                <p class="logo-text">GGRPG</p>
+            </div>
+        </a>
+
+        <a href="agentes.html" class="no-decoration">
+            <p class="topicos">Agentes</p>
+        </a>
+        <a>
+            <p class="topicos">Apoia-se</p>
+        </a>
+        <i id='user' onclick='window.location.href="perfil.html"' class='bx bxs-user' style="color:#fff"></i>
+    </div>
+
+    <div class="steps">
+        <a href="novo-agente1.html" class="no-decoration">
+            <p class="step">Atributos</p>
+        </a>
+        <hr class="div-step">
+        <a href="novo-agente2.html" class="no-decoration">
+            <p class="step">Origem</p>
+        </a>
+        <hr class="div-step">
+        <a href="novo-agente3.html" class="no-decoration">
+            <p class="step">Classe</p>
+        </a>
+        <hr class="div-step">
+        <a href="novo-agente4.html" class="no-decoration">
+            <p class="step">Toques finais</p>
+        </a>
+    </div>
+
+    <p class="text1">
+        Sua classe indica o treinamento que você recebeu na Ordem para enfrentar os perigos do Outro Lado.
+        Em termos de jogo, é a sua característica mais importante, pois define o que você faz e qual é o seu papel no grupo de
+        investigadores.
+    </p>
+    <p class="text2">
+        Perícias concedidas serão adicionadas automaticamente. Perícias opcionais podem ser adicionadas ao agente após sua
+        criação.
+    </p>
+
+
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth-compat.js"></script>
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<script src="../js/firebase-init.js"></script>
+<script src="../js/errors.js"></script>
+<script src="../js/main.js"></script>
+
+</html>

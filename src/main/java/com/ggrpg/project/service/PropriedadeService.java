@@ -54,6 +54,7 @@ public class PropriedadeService {
         entity.setDeslocamento(obj.getDeslocamento());
         entity.setSanidadeTot(obj.getSanidadeTot());
         entity.setDefesa(obj.getDefesa());
-        entity.setResistencia(obj.getResistencia());
     }
+
+
 }

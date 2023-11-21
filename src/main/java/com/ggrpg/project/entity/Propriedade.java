@@ -31,31 +31,52 @@ public class Propriedade implements Serializable {
     private Integer nex;
     private Integer peRodada;
     private Integer peTot;
+    private Integer peAtual;
     private Integer pvTot;
+    private Integer pvAtual;
     private Integer deslocamento;
     private Integer sanidadeTot;
+    private Integer sanidadeAtual;
     private Integer defesa;
-    private String resistencia;
+
 
     @OneToOne
     @JoinColumn(name = "id_ficha", nullable = false)
     private Ficha ficha;
 
-    public Propriedade(Integer id_propriedade, String origem, String classe, String trilha, Integer nex,
-            Integer peRodada, Integer peTot, Integer pvTot, Integer deslocamento, Integer sanidadeTot, Integer defesa,
-            String resistencia) {
+    //Criar ficha
+    public Propriedade(Atributo atributo, Integer id_propriedade, String origem, String classe, Integer peTot, Integer pvTot, Integer sanidadeTot, Integer defesa) {
         this.id_propriedade = id_propriedade;
         this.origem = origem;
         this.classe = classe;
-        this.trilha = trilha;
-        this.nex = nex;
-        this.peRodada = peRodada;
-        this.peTot = peTot;
-        this.pvTot = pvTot;
-        this.deslocamento = deslocamento;
-        this.sanidadeTot = sanidadeTot;
-        this.defesa = defesa;
-        this.resistencia = resistencia;
+        this.nex = 5;
+        this.peRodada = 1;
+        if(classe == "combatente"){
+            this.peTot = 2+atributo.getPresenca();
+        } else if(classe == "especialista"){
+            this.peTot = 3+atributo.getPresenca();
+        } else if(classe == "ocultista"){
+            this.peTot = 4+atributo.getPresenca();
+        }
+        this.peAtual = peTot;
+        if(classe == "combatente"){
+            this.pvTot = 12+atributo.getVigor();
+        } else if(classe == "especialista"){
+            this.pvTot = 16+atributo.getVigor();
+        } else if(classe == "ocultista"){
+            this.pvTot = 20+atributo.getVigor();
+        }
+        this.pvAtual = pvTot;
+        this.deslocamento = 9;
+        if(classe == "combatente"){
+            this.sanidadeTot = 12;
+        } else if(classe == "especialista"){
+            this.sanidadeTot = 16;
+        } else if(classe == "ocultista"){
+            this.sanidadeTot = 20;
+        }
+        this.sanidadeAtual = sanidadeTot;
+        this.defesa = 10+atributo.getAgilidade();
     }
 
 }

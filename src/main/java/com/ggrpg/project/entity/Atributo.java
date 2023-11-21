@@ -28,8 +28,8 @@ public class Atributo implements Serializable {
     private Integer forca;
     private Integer agilidade;
     private Integer intelecto;
-    private Integer vigor;
     private Integer presenca;
+    private Integer vigor;
 
     @OneToOne
     @JoinColumn(name = "id_ficha", nullable = false)

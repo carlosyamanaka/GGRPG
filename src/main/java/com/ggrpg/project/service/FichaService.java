@@ -30,6 +30,7 @@ public class FichaService {
     }
 
     public Ficha insert(Ficha obj) {
+
         return repository.save(obj);
     }
 
