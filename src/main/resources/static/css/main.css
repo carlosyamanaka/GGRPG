@@ -158,6 +158,12 @@ p {
     margin-left: 4rem;
 }
 
+.meia-pagina3 {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
 .step1 {
     font-size: 24px;
     text-align: justify;
@@ -187,11 +193,26 @@ p {
 .text1 {
     margin: 1rem 6rem;
     font-size: 16px;
+    text-align: justify;
 }
 
 .text2 {
     margin: 1rem 6rem;
     font-weight: 600;
     font-size: 16px;
+    text-align: justify;
+}
+
+.jogador-label {
+    color: white;
+    margin-bottom: .4rem;
+    margin-right: 1rem;
+}
+
+.jogador-input {
+    color: #1d1d1d;
+    margin-right: 1rem;
+    padding: .2rem;
+    border-radius: 2px;
 }
 
