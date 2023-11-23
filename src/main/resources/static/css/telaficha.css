@@ -93,3 +93,113 @@ td th{
 
 .txtLabelPericia{
 }
+
+.infosGerais label{
+    color: white;
+}
+
+.infosGerais input{
+    
+}
+
+
+
+
+.infosGerais{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0 2rem 0;
+
+}
+
+
+.listaSelecionarParte{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.partes{
+    display: flex;
+    justify-content: center;
+    color: white;
+
+}
+
+.esquerda, .meio, .direita{
+    width: 24%;
+}
+
+.esquerda{
+    padding: 1rem;
+}
+
+.direita{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+}
+
+.botaoAdicionar{
+    width: 80%;
+    height: 3rem;
+}
+
+.subDireita{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.container {
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+.agilidade {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.força {
+    position: relative;
+    top: 50px;
+}
+
+.intelecto {
+    position: absolute;
+    top: 100px;
+    right: 10px;
+}
+
+.vigor {
+    position: relative;
+    bottom: 50px;
+}
+
+.presença {
+    position: absolute;
+    bottom: 100px;
+    left: 10px;
+}
+
+.popup {
+    z-index: 999;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Adicionei um fundo escuro para melhorar a legibilidade */
+    padding: 100%;
+    border-radius: 10px;
+}

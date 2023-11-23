@@ -22,6 +22,105 @@
 
 </head>
 <body>
+    <div class="popup" id="addAtaque" style="display: none;">
+        <h2>Adicionar habilidade</h2>
+        <input type="text" name="nome" placeholder="Nome da habilidade">
+        <input type="number" name="dano" placeholder="Dano">
+        <input type="number" name="critico" placeholder="Número crítico">
+        <input type="number" name="multiplicador" placeholder="Multiplicador de dano">
+        <div style="display: flex; justify-content: space-between;">        
+            <input type="submit" value="Adicionar">
+            <button onclick="fechar(addHab)">cancelar</button></div>
+      </div>    
+      <div class="popup" id="addHabilidade" style="display: none;">
+        <h2>Adicionar habilidade</h2>
+        <input type="text" name="nome" placeholder="Nome da habilidade">
+        <input type="number" name="dano" placeholder="Dano">
+        <input type="number" name="critico" placeholder="Número crítico">
+        <input type="number" name="multiplicador" placeholder="Multiplicador de dano">
+        <div style="display: flex; justify-content: space-between;">        
+            <input type="submit" value="Adicionar">
+            <button onclick="fechar(addHab)">cancelar</button></div>
+      </div>    
+      <div class="popup" id="addRituais" style="display: none;">
+        <h2>Adicionar habilidade</h2>
+        <div id="ritual">
+            <h2>Novo Ritual</h2>
+            <div class="dados">
+              <div class="dado">
+                <label>Nome:</label>
+                <input type="text" placeholder="Nome do ritual" />
+              </div>
+              <div class="dado">
+                <label>Elemento:</label>
+                <select name="elemento">
+                  <option value="Ar">Ar</option>
+                  <option value="Água">Água</option>
+                  <option value="Fogo">Fogo</option>
+                  <option value="Terra">Terra</option>
+                </select>
+              </div>
+              <div class="dado">
+                <label>Circulo:</label>
+                <input type="number" min="1" max="9" placeholder="Nível do círculo" />
+              </div>
+              <div class="dado">
+                <label>Execução:</label>
+                <input type="text" placeholder="Tempo de execução" />
+              </div>
+              <div class="dado">
+                <label>Alcance:</label>
+                <input type="text" placeholder="Alcance" />
+              </div>
+              <div class="dado">
+                <label>Conhecimento:</label>
+                <input type="number" min="1" max="9" placeholder="Nível de conhecimento" />
+              </div>
+              <div class="dado">
+                <label>Área:</label>
+                <input type="text" placeholder="Área de efeito" />
+              </div>
+              <div class="dado">
+                <label>Alvo:</label>
+                <input type="text" placeholder="Alvo" />
+              </div>
+              <div class="dado">
+                <label>Duração:</label>
+                <input type="text" placeholder="Duração" />
+              </div>
+              <div class="dado">
+                <label>Efeito:</label>
+                <textarea placeholder="Efeito do ritual"></textarea>
+              </div>
+              <div class="dado">
+                <label>Resistência:</label>
+                <input type="text" placeholder="Resistência" />
+              </div>
+              <div class="dado">
+                <label>Dados Discente:</label>
+                <input type="number" min="1" max="9" placeholder="Número de dados discente" />
+              </div>
+              <div class="dado">
+                <label>Dados Verdadeiro:</label>
+                <input type="number" min="1" max="9" placeholder="Número de dados verdadeiro" />
+              </div>
+            </div>
+            <div class="botoes">
+              <button id="Cancelar" onclick="cancelar(addRituais)">Cancelar</button>
+              <button id="Adicionar">Adicionar</button>
+            </div>
+          </div>
+      </div>    
+      <div class="popup" id="addInventario" style="display: none;">
+        <h2>Adicionar habilidade</h2>
+        <input type="text" name="nome" placeholder="Nome da habilidade">
+        <input type="number" name="dano" placeholder="Dano">
+        <input type="number" name="critico" placeholder="Número crítico">
+        <input type="number" name="multiplicador" placeholder="Multiplicador de dano">
+        <div style="display: flex; justify-content: space-between;">        
+            <input type="submit" value="Adicionar">
+            <button onclick="fechar(addHab)">cancelar</button></div>
+      </div>    
     <div>
         <div id="header">
             <a class="no-decoration" href="index.html">
@@ -39,404 +138,510 @@
             </a>
             <i id='user' onclick='window.location.href="perfil.html"' class='bx bxs-user' style="color:#fff"></i>
         </div>
+        <div class="infosGerais">
+            <form action="">
+                <label for="pNome">Personagem</label>
+                <input type="text" name="personagemNome" id="pNome" disabled>
+                <label for="pNome">Ordem</label>
+                <input type="text" name="personagemNome" id="pNome" disabled>
+                <label for="pNome">Jogador</label>
+                <input type="text" name="personagemNome" id="pNome" disabled>
+                <label for="pNome">Classe</label>
+                <input type="text" name="personagemNome" id="pNome" disabled> 
 
-        <div class="infosGerais"></div>
-        <div class="esquerda">
-            <div class="atributos">
-                <label class="atributo" for="">FOR: </label>
-                <input class="atributo-input" type="text" value="1">
-            </div>
-            <div class="atributos">
-                <label class="atributo" for="">AGI: </label>
-                <input class="atributo-input" type="text" value="1">
-            </div>
-            <div class="atributos">
-                <label class="atributo" for="">INT: </label>
-                <input class="atributo-input" type="text" value="1">
-            </div>
-            <div class="atributos">
-                <label class="atributo" for="">PRE: </label>
-                <input class="atributo-input" type="text" value="1">
-            </div>
-            <div class="atributos">
-                <label class="atributo" for="">VIG: </label>
-                <input class="atributo-input" type="text" value="1">
-            </div>
+            </form>
         </div>
-        <div class="meio">
-                    <table>
-                        <tr>
-                            <th>Pericia</th>
-                            <th>Treinos</th>
-                            <th>Outros</th>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Acrobacia</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Adestramento</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Artes</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Atletismo</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Atualidades</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Ciências</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Crime*</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Diplomacia</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Enganação</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Fortitude</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Furtividade+</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Iniciativa</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Intimidação</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Intuição</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Investigação</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Luta</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Medicina</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Ocultismo*</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Percepção</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Pilotagem</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Pontaria</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Profissão</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Reflexos</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Religião*</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Sobrevivência</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Tática*</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Tecnologia*</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
-                        <tr>
-                            <td class="txtLabelPericia">Vontade</td>
-                            <td class="comboBoxTreino">
-                                <select name="treino">
-                                    <option value="0">0</option>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                </select>
-                            </td>
-                        
-                            <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
-                        </tr>
+
+      
 
 
-                </table>
+        <div class="partes">
+            <div class="esquerda">
+
+                
+                <div class="atributos">
+                    <label class="atributo" for="">FOR: </label>
+                    <input class="atributo-input" type="text" value="1">
+                </div>
+                <div class="atributos">
+                    <label class="atributo" for="">AGI: </label>
+                    <input class="atributo-input" type="text" value="1">
+                </div>
+                <div class="atributos">
+                    <label class="atributo" for="">INT: </label>
+                    <input class="atributo-input" type="text" value="1">
+                </div>
+                <div class="atributos">
+                    <label class="atributo" for="">PRE: </label>
+                    <input class="atributo-input" type="text" value="1">
+                </div>
+                <div class="atributos">
+                    <label class="atributo" for="">VIG: </label>
+                    <input class="atributo-input" type="text" value="1">
+                </div>
+
+
+            </div>
+            <div class="meio">
+                        <table>
+                            <tr>
+                                <th>Pericia</th>
+                                <th>Treinos</th>
+                                <th>Outros</th>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Acrobacia</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Adestramento</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Artes</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Atletismo</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Atualidades</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Ciências</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Crime*</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Diplomacia</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Enganação</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Fortitude</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Furtividade+</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Iniciativa</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Intimidação</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Intuição</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Investigação</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Luta</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Medicina</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Ocultismo*</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Percepção</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Pilotagem</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Pontaria</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Profissão</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Reflexos</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Religião*</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Sobrevivência</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Tática*</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Tecnologia*</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+                            <tr>
+                                <td class="txtLabelPericia">Vontade</td>
+                                <td class="comboBoxTreino">
+                                    <select name="treino">
+                                        <option value="0">0</option>
+                                        <option value="5">5</option>
+                                        <option value="10">10</option>
+                                        <option value="15">15</option>
+                                    </select>
+                                </td>
+                            
+                                <td class="inputNumberOutros"><input type="number" name="valorDireto" id="valDireto" max="99"></td>
+                            </tr>
+
+
+                    </table>
+            </div>
+
+
+            <div class="direita">
+                <ul class="listaSelecionarParte">
+                    <li onclick="alterarDireita('ataques')" class="partes">Ataques</li>
+                    <li onclick="alterarDireita('habilidades')" class="partes">Habilidades</li>
+                    <li onclick="alterarDireita('rituais')" class="partes">Rituais</li>
+                    <li onclick="alterarDireita('inventario')" class="partes">Inventário</li>
+                </ul>
+                <div id="ataques" class="subDireita" style="display: flex;">
+                    <button class="botaoAdicionar" onclick="abrirAtaque()">Adicionar</button>
+                    <br>
+                    // lista para ser preenchida
+
+
+
+                    <div id="ataque">
+                        <h2>Novo Ataque</h2>
+                        <div class="dados">
+                          <div class="dado">
+                            <label>Dano:</label>
+                            <input type="number" value="104" />
+                          </div>
+                          <div class="dado">
+                            <label>Crítico:</label>
+                            <input type="number" value="2" />
+                          </div>
+                          <div class="dado">
+                            <label>Ataque Bonus:</label>
+                            <input type="number" value="0" />
+                          </div>
+                          <div class="dado">
+                            <label>Dano Extra:</label>
+                            <input type="number" value="0" />
+                          </div>
+                          <div class="dado">
+                            <label>Tipo de Dano:</label>
+                            <input type="text" value="-" />
+                          </div>
+                          <div class="dado">
+                            <label>Alcance:</label>
+                            <input type="text" value="-" />
+                          </div>
+                          <div class="dado">
+                            <label>Perícia:</label>
+                            <input type="text" value="Luta" />
+                          </div>
+                          <div class="dado">
+                            <label>Atributo Dano:</label>
+                            <input type="text" value="Força" />
+                          </div>
+                        </div>
+                        <div class="botoes">
+                          <button id="remover">Remover</button>
+                          <button id="editar">Editar</button>
+                        </div>
+                      </div>
+                </div>
+                <div id="habilidades" class="subDireita" style="display: none;">
+                    <button class="botaoAdicionar" onclick="abrirHabilidades()">Adicionar</button>
+                    <br>
+                    // lista para ser preenchida
+                </div>
+                <div id="rituais" class="subDireita" style="display: none;">
+                    <button class="botaoAdicionar" onclick="abrirRituais()">Adicionar</button>
+                    <br>
+                    // lista para ser preenchida
+                </div>
+                <div id="inventario" class="subDireita" style="display: none;">
+                    <button class="botaoAdicionar" onclick="abrirInventario()">Adicionar</button>
+                    <br>
+                    // lista para ser preenchida
+                </div>
+            </div>
+            
         </div>
-        <div class="direita"></div>
     </div>
 </body>
+    
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth-compat.js"></script>
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<script src="../js/firebase-init.js"></script>
+<script src="../js/errors.js"></script>
+<script src="../js/tela-ficha.js"></script>
 </html>
+
+
