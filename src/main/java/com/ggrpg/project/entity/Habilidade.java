@@ -27,7 +27,6 @@ public class Habilidade implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(insertable = false, updatable = false)
     private Integer id_habilidade;
-    private Integer custo;
     private String descricao;
     private Integer pagina;
 
@@ -35,9 +34,8 @@ public class Habilidade implements Serializable {
     @JoinColumn(name = "id_ficha", nullable = false)
     private Ficha ficha;
 
-    public Habilidade(Integer id_habilidade, Integer custo, String descricao, Integer pagina) {
+    public Habilidade(Integer id_habilidade, String descricao, Integer pagina) {
         this.id_habilidade = id_habilidade;
-        this.custo = custo;
         this.descricao = descricao;
         this.pagina = pagina;
     }

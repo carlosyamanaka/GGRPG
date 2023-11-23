@@ -46,9 +46,7 @@ public class RitualService {
     private void updateData(Ritual entity, Ritual obj) {
         entity.setCirculo(obj.getCirculo());
         entity.setDescricao(obj.getDescricao());
-        entity.setCusto(obj.getCusto());
         entity.setPagina(obj.getPagina());
-        entity.setDt(obj.getDt());
 
     }
 }

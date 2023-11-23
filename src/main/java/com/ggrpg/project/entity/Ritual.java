@@ -27,23 +27,19 @@ public class Ritual implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_ritual;
-    private Integer circulo;
+    private String circulo;
     private String descricao;
-    private Integer custo;
     private Integer pagina;
-    private Integer dt;
 
     @ManyToOne
     @JoinColumn(name = "id_ficha", nullable = false)
     private Ficha ficha;
 
-    public Ritual(Integer id_ritual, Integer circulo, String descricao, Integer custo, Integer pagina, Integer dt) {
+    public Ritual(Integer id_ritual, String circulo, String descricao, Integer custo, Integer pagina, Integer dt) {
         this.id_ritual = id_ritual;
         this.circulo = circulo;
         this.descricao = descricao;
-        this.custo = custo;
         this.pagina = pagina;
-        this.dt = dt;
     }
 
 }

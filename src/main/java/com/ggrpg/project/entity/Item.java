@@ -27,26 +27,19 @@ public class Item implements Serializable {
     private Integer id_item;
     private String nome;
     private Integer espaco;
-    private String modificadores;
-    private String teste;
-    private String dano;
-    private String alcance;
-    private String efeito;
+    private Integer categoria;
+    private String descricao;
 
     @ManyToOne
     @JoinColumn(name = "id_inventario", nullable = false)
     private Inventario inventario;
 
-    public Item(Integer id_item, String nome, Integer espaco, String modificadores, String teste, String dano,
-            String alcance, String efeito) {
+    public Item(Integer id_item, String nome, Integer espaco, Integer categoria, String descricao) {
         this.id_item = id_item;
         this.nome = nome;
         this.espaco = espaco;
-        this.modificadores = modificadores;
-        this.teste = teste;
-        this.dano = dano;
-        this.alcance = alcance;
-        this.efeito = efeito;
+        this.categoria = categoria;
+        this.descricao = descricao;
     }
 
 }

@@ -23,15 +23,17 @@
 </head>
 <body>
     <div class="popup" id="addAtaque" style="display: none;">
-        <h2>Adicionar habilidade</h2>
-        <input type="text" name="nome" placeholder="Nome da habilidade">
+        <h2>Novo ataque</h2>
+        <input type="text" name="nome" placeholder="Novo ataque">
         <input type="number" name="dano" placeholder="Dano">
         <input type="number" name="critico" placeholder="Número crítico">
         <input type="number" name="multiplicador" placeholder="Multiplicador de dano">
         <div style="display: flex; justify-content: space-between;">        
+            <button onclick="fecharpopup('addAtaque')">Cancelar</button>
             <input type="submit" value="Adicionar">
-            <button onclick="fechar(addHab)">cancelar</button></div>
-      </div>    
+        </div>
+    </div>
+
       <div class="popup" id="addHabilidade" style="display: none;">
         <h2>Adicionar habilidade</h2>
         <input type="text" name="nome" placeholder="Nome da habilidade">
@@ -54,7 +56,7 @@
               <div class="dado">
                 <label>Elemento:</label>
                 <select name="elemento">
-                  <option value="Ar">Ar</option>
+                  <option value="Sangue">Sangue</option>
                   <option value="Água">Água</option>
                   <option value="Fogo">Fogo</option>
                   <option value="Terra">Terra</option>
@@ -120,7 +122,8 @@
         <div style="display: flex; justify-content: space-between;">        
             <input type="submit" value="Adicionar">
             <button onclick="fechar(addHab)">cancelar</button></div>
-      </div>    
+      </div>  
+
     <div>
         <div id="header">
             <a class="no-decoration" href="index.html">
@@ -141,13 +144,13 @@
         <div class="infosGerais">
             <form action="">
                 <label for="pNome">Personagem</label>
-                <input type="text" name="personagemNome" id="pNome" disabled>
-                <label for="pNome">Ordem</label>
-                <input type="text" name="personagemNome" id="pNome" disabled>
-                <label for="pNome">Jogador</label>
-                <input type="text" name="personagemNome" id="pNome" disabled>
-                <label for="pNome">Classe</label>
-                <input type="text" name="personagemNome" id="pNome" disabled> 
+                <input type="text" name="personagemNome" id="pNome">
+                <label for="pOrigem">Origem</label>
+                <input type="text" name="personagemNome" id="pOrigem">
+                <label for="pJogador">Jogador</label>
+                <input type="text" name="personagemNome" id="pJogador">
+                <label for="pClasse">Classe</label>
+                <input type="text" name="personagemNome" id="pClasse"> 
 
             </form>
         </div>
@@ -157,8 +160,6 @@
 
         <div class="partes">
             <div class="esquerda">
-
-                
                 <div class="atributos">
                     <label class="atributo" for="">FOR: </label>
                     <input class="atributo-input" type="text" value="1">
@@ -179,7 +180,71 @@
                     <label class="atributo" for="">VIG: </label>
                     <input class="atributo-input" type="text" value="1">
                 </div>
+                <div class="status">
+                    <div class="linhadiv">
+                        <p class="sNex">Nex: </p>
+                            <select name="nex" class="sNex">
+                                <option value="0">5%</option>
+                                <option value="5">10%</option>
+                                <option value="15">15%</option>
+                                <option value="20">20%</option>
+                                <option value="25">25%</option>
+                                <option value="30">30%</option>
+                                <option value="35">35%</option>
+                                <option value="40">40%</option>
+                                <option value="45">45%</option>
+                                <option value="50">50%</option>
+                                <option value="55">55%</option>
+                                <option value="60">60%</option>
+                                <option value="65">65%</option>
+                                <option value="70">70%</option>
+                                <option value="75">75%</option>
+                                <option value="80">80%</option>
+                                <option value="85">85%</option>
+                                <option value="90">90%</option>
+                                <option value="95">95%</option>
+                                <option value="99">99%</option>
+                            </select>
+                        <p class="sPeRodada">PeRodada</p>
+                        <input type="text" class="InputsPeRodada" value="1">
+                        <p class="sDeslocamento">DESL</p>
+                        <input type="text" class="InputsDeslocamento" value="9 m" disabled>
+                    </div>
+                    <div class="flexdivrow">
+                        <p class="sVida">Vida: </p>
+                            <input type="text" class="InputsVidaAtual" value="10">
+                            <p>/</p>
+                            <input type="text" class="InputsVidaTotal" value="10">
+                    </div>
+                    <div class="flexdivrow">
+                        <p class="sSanidade">Sanidade: </p>
+                        <input type="text" class="InputsSanidadeAtual" value="12">
+                        <p>/</p>
+                        <input type="text" class="InputsSanidadeTotal" value="12">
+                    </div>
+                    <div class="flexdivrow">
+                        <p class="sEsforco">Esforco: </p>
+                        <input type="text" class="InputsEsforcoAtual" value="8">
+                        <p>/</p>
+                        <input type="text" class="InputsEsforcoTotal" value="8">
+                    </div>
 
+                    <div class="statusdef">
+                        <div class="flexdivrow">
+                            <p class="sDefesa">Defesa: </p>
+                            <input type="text" value="11" class="InputsDefesa">
+                        </div>
+                        <div class="flexdivrow">
+                            <p class="sBloqueio">Bloqueio: </p>
+                            <input type="text" value="5" class="InputsBloqueio">
+                        </div>
+                        <div class="flexdivrow">
+                            <p class="sEsquiva">Esquiva: </p>
+                            <input type="text" value="16" class="InputsEsquiva">
+                        </div>
+                    </div>
+                    
+                </div>
 
             </div>
             <div class="meio">
@@ -565,53 +630,11 @@
                     <li onclick="alterarDireita('inventario')" class="partes">Inventário</li>
                 </ul>
                 <div id="ataques" class="subDireita" style="display: flex;">
-                    <button class="botaoAdicionar" onclick="abrirAtaque()">Adicionar</button>
+                    <button class="botaoAdicionar" onclick="abrirpopup('addAtaque')">Adicionar</button>
                     <br>
                     // lista para ser preenchida
 
 
-
-                    <div id="ataque">
-                        <h2>Novo Ataque</h2>
-                        <div class="dados">
-                          <div class="dado">
-                            <label>Dano:</label>
-                            <input type="number" value="104" />
-                          </div>
-                          <div class="dado">
-                            <label>Crítico:</label>
-                            <input type="number" value="2" />
-                          </div>
-                          <div class="dado">
-                            <label>Ataque Bonus:</label>
-                            <input type="number" value="0" />
-                          </div>
-                          <div class="dado">
-                            <label>Dano Extra:</label>
-                            <input type="number" value="0" />
-                          </div>
-                          <div class="dado">
-                            <label>Tipo de Dano:</label>
-                            <input type="text" value="-" />
-                          </div>
-                          <div class="dado">
-                            <label>Alcance:</label>
-                            <input type="text" value="-" />
-                          </div>
-                          <div class="dado">
-                            <label>Perícia:</label>
-                            <input type="text" value="Luta" />
-                          </div>
-                          <div class="dado">
-                            <label>Atributo Dano:</label>
-                            <input type="text" value="Força" />
-                          </div>
-                        </div>
-                        <div class="botoes">
-                          <button id="remover">Remover</button>
-                          <button id="editar">Editar</button>
-                        </div>
-                      </div>
                 </div>
                 <div id="habilidades" class="subDireita" style="display: none;">
                     <button class="botaoAdicionar" onclick="abrirHabilidades()">Adicionar</button>

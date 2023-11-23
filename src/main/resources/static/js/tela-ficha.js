@@ -5,29 +5,24 @@ function alterarDireita(step) {
     document.getElementById(`${step}`).style.display = 'flex';
 }
 
-//slk fi, é mt coisa, pprt, pqp, acho que isso deve criar, nao sei como funfa no js puro, boa sorte kkkkkkkkkkkkkkkkk
-// mal consigo imaginar como fazer isso, so fiz no vue e la é diff
-// se quiser apagar ai dps e fazer mais simples ou algo diff fica a vontade
-
-
-function abrirRituais(){
-    document.getElementById("addRituais").style.display="flex";
+function abrirpopup(popup){
+    document.getElementById(`${popup}`).style.display = "flex";
+    document.body.style.overflow = "hidden";
 }
 
-
-function cancelar(popup){
-    document.getElementById(`${popup}`).style.display="none";
+function fecharpopup(popup){
+    document.getElementById(`${popup}`).style.display = "none";
+    document.body.style.overflow = "auto";
 }
+
 
 function criarAtaque() {
-    // Criar elemento div principal
-    var divAtaque = document.createElement('div');
-    divAtaque.id = 'ataque';
+    var divAtaques = document.getElementById('ataques');
 
     // Adicionar título h2
     var tituloH2 = document.createElement('h2');
     tituloH2.textContent = 'Novo Ataque';
-    divAtaque.appendChild(tituloH2);
+    divAtaques.appendChild(tituloH2);
 
     // Adicionar div de dados
     var divDados = document.createElement('div');
@@ -59,11 +54,11 @@ function criarAtaque() {
         input.value = dado.value;
         divDado.appendChild(input);
 
-        divDados.appendChild(divDado);
+        
     });
 
     // Adicionar div de dados à div principal
-    divAtaque.appendChild(divDados);
+    divAtaques.appendChild(divDados);
 
     // Adicionar div de botões
     var divBotoes = document.createElement('div');
@@ -82,10 +77,9 @@ function criarAtaque() {
     divBotoes.appendChild(btnEditar);
 
     // Adicionar div de botões à div principal
-    divAtaque.appendChild(divBotoes);
+    divAtaques.appendChild(divBotoes);
 
-    // Adicionar div principal ao corpo do documento (ou a outro local desejado)
-    document.body.appendChild(divAtaque);
+
 }
 
 // Chamar a função para criar o ataque
