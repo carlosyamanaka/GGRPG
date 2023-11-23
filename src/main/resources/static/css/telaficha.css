@@ -1,0 +1,95 @@
+/* aaaaaaaaaaaaaaaaa.css */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(12, 12, 12);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 70px;
+}
+
+.logo-text {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    padding-left: .4rem;
+}
+
+#header {
+    background-color: rgb(31, 31, 31);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: .2rem 3.8rem;
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+p {
+    color: white;
+}
+
+td {
+    color: white;
+}
+
+th{
+    color: white;
+}
+
+td th{
+    padding-left: 20px;
+}
+
+.meio {
+    height: 33%;
+}
+
+.atributos {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+
+.atributo {
+    color: white;
+    height: 30px;
+    width: 30px;
+}
+
+.atributo-input {
+    width: 30px;
+    border: none;
+    margin-left: .7rem;
+    background-color: rgb(129, 129, 129);
+    color: white;
+    padding-left: 8px;
+}
+
+.inputNumberOutros input{
+    width: 2rem;
+    border: 1px solid black;
+}
+
+.comboBoxTreino{
+
+}
+
+.txtLabelPericia{
+}

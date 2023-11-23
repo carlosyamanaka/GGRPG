@@ -72,7 +72,7 @@ public class Propriedade implements Serializable {
             this.sanidadeTot = 12;
         } else if(classe == "especialista"){
             this.sanidadeTot = 16;
-        } else if(classe == "ocultista"){
+        } else if(classe == "ocultista"){   
             this.sanidadeTot = 20;
         }
         this.sanidadeAtual = sanidadeTot;

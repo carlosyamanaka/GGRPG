@@ -41,25 +41,25 @@
         <i id='user' onclick='window.location.href="perfil.html"' class='bx bxs-user' style="color:#fff"></i>
     </div>
 
-    <div class="novo-agente1">
-        <div class="steps">
-            <a onclick="" class="no-decoration">
-            <p class="step">Atributos</p>
-            </a>
-            <hr class="div-step">
-            <a class="no-decoration">
+    <div class="steps">
+        <a class="no-decoration" >
+            <p class="step" onclick="editanovoagente(1)">Atributos</p>
+        </a>
+        <hr class="div-step">
+        <a class="no-decoration" onclick="editanovoagente(2)">
             <p class="step">Origem</p>
-            </a>
-            <hr class="div-step">
-            <a class="no-decoration">
+        </a>
+        <hr class="div-step">
+        <a class="no-decoration" onclick="editanovoagente(3)">
             <p class="step">Classe</p>
-            </a>
-            <hr class="div-step">
-            <a class="no-decoration">
+        </a>
+        <hr class="div-step">
+        <a class="no-decoration" onclick="editanovoagente(4)">
             <p class="step">Toques finais</p>
-            </a>
-        </div>
-    
+        </a>
+    </div>
+
+    <div class="novo-agente" id="step1">
         <div class="meia-pagina1">
             <p class="step1">
                 Quando você cria um personagem, todos os seus atributos começam em 1 e você recebe 4 pontos para distribuir entre eles
@@ -91,25 +91,7 @@
         </div>
     </div>
 
-    <div class="novo-agente2">
-        <div class="steps">
-            <a href="novo-agente1.html" class="no-decoration">
-                <p class="step">Atributos</p>
-            </a>
-            <hr class="div-step">
-            <a href="novo-agente2.html" class="no-decoration">
-                <p class="step">Origem</p>
-            </a>
-            <hr class="div-step">
-            <a href="novo-agente3.html" class="no-decoration">
-                <p class="step">Classe</p>
-            </a>
-            <hr class="div-step">
-            <a href="novo-agente4.html" class="no-decoration">
-                <p class="step">Toques finais</p>
-            </a>
-        </div>
-        
+    <div class="novo-agente" id="step2" style="display: none">
         <p class="text1">
             O que seu personagem fazia antes de se envolver com o paranormal e ingressar na Ordem da Realidade? A origem
             representa
@@ -129,26 +111,50 @@
             Perícias concedidas serão adicionadas automaticamente. Perícias opcionais podem ser adicionadas ao agente após sua
             criação.
         </p>
+
+        <div class="card-origem">
+            <div class="reta">
+                <p class="origem-nome">Artista</p>
+                <button class="escolher-origem btn-core" onclick="editanovoagente(3)">ESCOLHER</button>
+            </div>
+                <p>Você era um ator, músico, escritor, dançarino, influenciador... Seu trabalho pode ter sido inspirado por uma experiência
+                paranormal do passado e o que o público acha que é pura criatividade, a Ordem sabe que tem um lado mais sombrio.</p>
+                <p><strong>Perícias treinadas.</strong> Artes e Enganação.</p>
+                <p><strong>Magnum Opus.</strong> Você é famoso por uma de suas obras. Uma vez por missão, pode determinar que um personagem envolvido em uma
+                cena de interação o reconheça. Você recebe +5 em testes de Presença e de perícias baseadas em Presença contra aquele
+                personagem. A critério do mestre, pode receber esses bônus em outras situações nas quais seria reconhecido.</p>
+
+        </div>
+
+        <div class="card-origem">
+            <div class="reta">
+                <p class="origem-nome">Cultista arrependido</p>
+                <button class="escolher-origem btn-core" onclick="editanovoagente(3)">ESCOLHER</button>
+            </div>
+            <p>Você fez parte de um culto paranormal. Talvez fossem ignorantes iludidos, que acreditavam estar contatando entidades
+            benevolentes. Talvez soubessem exatamente o que estavam fazendo. Seja como for, algo abriu seus olhos e agora você luta
+            pelo lado certo — embora carregue para sempre traços de sua vida pregressa. Outros membros da Ordem podem desconfiar de
+            sua conversão e você sabe que precisará se esforçar para conquistar a confiança de todos.</p>
+            <p><strong>Perícias treinadas.</strong> Ocultismo e Religião.</p>
+            <p><strong>Traços do outro lado.</strong> Você possui um poder paranormal à sua escolha. Porém, começa o jogo com metade da Sanidade normal para sua classe.</p>
+        </div>
+
+        <div class="card-origem">
+            <div class="reta">
+                <p class="origem-nome">Atleta</p>
+                <button class="escolher-origem btn-core" onclick="editanovoagente(3)"   >ESCOLHER</button>
+            </div>
+            <p>Você competia em um esporte individual ou por equipe, como natação ou futebol. Seu alto desempenho pode ser fruto de
+            alguma influência paranormal que nem mesmo você conhecia ou você pode ter se envolvido em algum evento paranormal em uma
+            de suas competições.</p>
+            <p><strong>Perícias treinadas.</strong> Acrobacia e Atletismo.</p>
+            <p><strong>110%.</strong> Quando faz um teste de perícia usando Força ou Agilidade (exceto Luta e Pontaria) você pode gastar 2 PE para receber +5
+            nesse teste.</p>
+        
+        </div>
     </div>
 
-    <div class="novo-agente3">
-        <div class="steps">
-            <a href="novo-agente1.html" class="no-decoration">
-                <p class="step">Atributos</p>
-            </a>
-            <hr class="div-step">
-            <a href="novo-agente2.html" class="no-decoration">
-                <p class="step">Origem</p>
-            </a>
-            <hr class="div-step">
-            <a href="novo-agente3.html" class="no-decoration">
-                <p class="step">Classe</p>
-            </a>
-            <hr class="div-step">
-            <a href="novo-agente4.html" class="no-decoration">
-                <p class="step">Toques finais</p>
-            </a>
-        </div>
+    <div class="novo-agente" id="step3" style="display: none">  
         
         <p class="text1">
             Sua classe indica o treinamento que você recebeu na Ordem para enfrentar os perigos do Outro Lado.
@@ -160,26 +166,38 @@
             Perícias concedidas serão adicionadas automaticamente. Perícias opcionais podem ser adicionadas ao agente após sua
             criação.
         </p>
+
+        <div class="card-origem">
+            <div class="reta">
+                <p class="origem-nome" >Combatente</p>
+                <button class="escolher-origem btn-core" onclick="editanovoagente(4)">ESCOLHER</button>
+            </div>
+            <p><strong>Treinado para lutar com todo tipo de armas, e com a força e a coragem para encarar os perigos de frente, É o tipo de
+            agente que prefere abordagens mais diretas e costuma atirar primeiro e perguntar depois.</strong></p>
+        </div>  
+
+        <div class="card-origem">
+            <div class="reta">
+                <p class="origem-nome">Especialista</p>
+                <button class="escolher-origem btn-core" onclick="editanovoagente(4)">ESCOLHER</button>
+            </div>
+            <p><strong>Um agente que confia mais em esperteza do que em força bruta. Um especialista se vale de conhecimento técnico,
+            raciocínio rápido ou mesmo lábia para resolver mistérios e enfrentar o paranormal.</strong></p>
+        </div>
+
+        <div class="card-origem">
+            <div class="reta">
+                <p class="origem-nome">Ocultista</p>
+                <button class="escolher-origem btn-core" onclick="editanovoagente(4)">ESCOLHER</button>
+            </div>
+            <p><strong>O Outro Lado é misterioso, perigoso e, de certa forma, cativante. Muitos estudiosos das entidades se perdem em seus
+            reinos obscuros em busca de poder, mas existem aqueles que visam compreender e dominar os mistérios paranormais para
+            usá-los para combater o próprio Outro Lado. Esse tipo de agente não é apenas um conhecedor do oculto, como também possui
+            talento para se conectar com elementos paranormais.</strong></p>
+        </div>
     </div>
 
-    <div class="novo-agente4">
-        <div class="steps">
-            <a href="novo-agente1.html" class="no-decoration">
-                <p class="step">Atributos</p>
-            </a>
-            <hr class="div-step">
-            <a href="novo-agente2.html" class="no-decoration">
-                <p class="step">Origem</p>
-            </a>
-            <hr class="div-step">
-            <a href="novo-agente3.html" class="no-decoration">
-                <p class="step">Classe</p>
-            </a>
-            <hr class="div-step">
-            <a href="novo-agente4.html" class="no-decoration">
-                <p class="step">Toques finais</p>
-            </a>
-        </div>
+    <div class="novo-agente" id="step4" style="display: none">
         
         <p class="text1">
             Até aqui, você definiu as características mecânicas de sua ficha — mas um bom personagem é mais do que apenas
@@ -187,7 +205,7 @@
             Agora, vamos trabalhar na descrição de seu agente, definindo aspectos como nome, gênero e idade. Esses aspectos não
             possuem efeito em regras, mas deixam o jogo mais envolvente e divertido.
         </p>
-        <div class="meia-pagina1">
+        <div class="toques-finais">
             <div class="meia-pagina3">
                 <label for="personagem-input" class="jogador-label">Personagem</label>
                 <input type="text" class="jogador-input" placeholder="Nome do personagem">
@@ -196,7 +214,9 @@
                 <label for="jogador-input" class="jogador-label">Jogador</label>
                 <input type="text" class="jogador-input" placeholder="Nome do jogador">
             </div>
+            <button class="btn-core" onclick="criarficha()">FINALIZAR</button>
         </div>
+
     </div>
     
 
