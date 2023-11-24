@@ -16,74 +16,93 @@ function fecharpopup(popup){
 }
 
 
-function criarAtaque() {
-    var divAtaques = document.getElementById('ataques');
 
-    // Adicionar título h2
-    var tituloH2 = document.createElement('h2');
-    tituloH2.textContent = 'Novo Ataque';
-    divAtaques.appendChild(tituloH2);
 
-    // Adicionar div de dados
-    var divDados = document.createElement('div');
-    divDados.classList.add('dados');
 
-    // Array de dados para criar
-    var dados = [
-        { label: 'Dano:', type: 'number', value: 104 },
-        { label: 'Crítico:', type: 'number', value: 2 },
-        { label: 'Ataque Bonus:', type: 'number', value: 0 },
-        { label: 'Dano Extra:', type: 'number', value: 0 },
-        { label: 'Tipo de Dano:', type: 'text', value: '-' },
-        { label: 'Alcance:', type: 'text', value: '-' },
-        { label: 'Perícia:', type: 'text', value: 'Luta' },
-        { label: 'Atributo Dano:', type: 'text', value: 'Força' }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////
+
+document.addEventListener('DOMContentLoaded', function () {
+    var listaDeAtaquesExemplo = [
+        { arma: 'Espada', teste: 'Força', dano: '1d8' },
+        { arma: 'Arco', teste: 'Destreza', dano: '1d10' },
+        { arma: 'Cajado', teste: 'Inteligência', dano: '1d6' },
     ];
+    criarAtaques(listaDeAtaquesExemplo);
+});
 
-    // Criar e adicionar divs de dados
-    dados.forEach(function (dado) {
-        var divDado = document.createElement('div');
-        divDado.classList.add('dado');
+function criarAtaques(listaDeAtaques) {
+    var divAtaques = document.getElementById('ataquesContainer');
+    divAtaques.innerHTML = ''; // Reset once before adding attacks
 
-        var label = document.createElement('label');
-        label.textContent = dado.label;
-        divDado.appendChild(label);
+    listaDeAtaques.forEach(function (ataque, index) {
+        // Create attack container
+        var divAtaque = document.createElement('div');
+        divAtaque.classList.add('ataque');
 
-        var input = document.createElement('input');
-        input.type = dado.type;
-        input.value = dado.value;
-        divDado.appendChild(input);
+        // Create attack elements
+        var tituloH2 = document.createElement('h2');
+        tituloH2.textContent = 'Novo Ataque';
+        divAtaque.appendChild(tituloH2);
 
-        
+        // Create dados element
+        var divDados = document.createElement('div');
+        divDados.classList.add('dados');
+
+        var propriedadesExibidas = ['arma', 'teste', 'dano'];
+        propriedadesExibidas.forEach(function (propriedade) {
+            var divDado = document.createElement('div');
+            divDado.classList.add('dado');
+            var label = document.createElement('label');
+            label.textContent = propriedade.charAt(0).toUpperCase() + propriedade.slice(1);
+            divDado.appendChild(label);
+            var input = document.createElement('input');
+            input.type = 'text';
+            input.value = ataque[propriedade];
+            divDado.appendChild(input);
+            divDados.appendChild(divDado);
+        });
+
+        // Add dados element to attack container
+        divAtaque.appendChild(divDados);
+
+        // Create botoes element
+        var divBotoes = document.createElement('div');
+        divBotoes.classList.add('botoes');
+
+        var btnRemover = document.createElement('button');
+        btnRemover.id = 'remover_' + index;
+        btnRemover.textContent = 'Remover';
+        // Add event handler for the remover button if needed
+        divBotoes.appendChild(btnRemover);
+
+        var btnEditar = document.createElement('button');
+        btnEditar.id = 'editar_' + index;
+        btnEditar.textContent = 'Editar';
+        // Add event handler for the editar button if needed
+        divBotoes.appendChild(btnEditar);
+
+        // Add botoes element to attack container
+        divAtaque.appendChild(divBotoes);
+
+        // Add attack container to ataquesContainer
+        divAtaques.appendChild(divAtaque);
     });
-
-    // Adicionar div de dados à div principal
-    divAtaques.appendChild(divDados);
-
-    // Adicionar div de botões
-    var divBotoes = document.createElement('div');
-    divBotoes.classList.add('botoes');
-
-    // Adicionar botão Remover
-    var btnRemover = document.createElement('button');
-    btnRemover.id = 'remover';
-    btnRemover.textContent = 'Remover';
-    divBotoes.appendChild(btnRemover);
-
-    // Adicionar botão Editar
-    var btnEditar = document.createElement('button');
-    btnEditar.id = 'editar';
-    btnEditar.textContent = 'Editar';
-    divBotoes.appendChild(btnEditar);
-
-    // Adicionar div de botões à div principal
-    divAtaques.appendChild(divBotoes);
-
-
 }
 
-// Chamar a função para criar o ataque
-criarAtaque();
-
-
-
+criarAtaques(listaDeAtaquesExemplo);

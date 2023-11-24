@@ -35,7 +35,7 @@ public class Ritual implements Serializable {
     @JoinColumn(name = "id_ficha", nullable = false)
     private Ficha ficha;
 
-    public Ritual(Integer id_ritual, String circulo, String descricao, Integer custo, Integer pagina, Integer dt) {
+    public Ritual(Integer id_ritual, String circulo, String descricao, Integer pagina) {
         this.id_ritual = id_ritual;
         this.circulo = circulo;
         this.descricao = descricao;

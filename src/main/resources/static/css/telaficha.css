@@ -1,4 +1,3 @@
-/* aaaaaaaaaaaaaaaaa.css */
 * {
     padding: 0;
     margin: 0;
@@ -57,10 +56,6 @@ td th{
     padding-left: 20px;
 }
 
-.meio {
-    height: 33%;
-}
-
 .atributos {
     display: flex;
     flex-direction: row;
@@ -75,21 +70,84 @@ td th{
 
 .atributo-input {
     width: 30px;
+}
+
+.underline-input {
     border: none;
-    margin-left: .7rem;
-    background-color: rgb(129, 129, 129);
+    background-color: transparent;
+    border-bottom: solid white 1px;
     color: white;
+    
+}
+
+.underline-input:focus {
+    outline: none;
+}
+
+.input-unidade {
     padding-left: 10px;
 }
 
+.input-dezena {
+    
+}
+
 .inputNumberOutros input{
-    width: 2rem;
-    border: 1px solid black;
+    background: transparent;
+    width: 32px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid white;
+    height: 34px;
+    margin: .2rem;
+    -webkit-appearance: none;
+    padding-left: .5rem;
+    color: white;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+
+}   
+
+.inputNumberOutros input:focus {
+    outline: none;
 }
 
 .comboBoxTreino{
-    border: none;
+    width: 15px;
+    height: 32px;
+    overflow: hidden;
+    background: none;
+    background-color: transparent;
 }
+
+.comboBoxTreino select {
+    background: transparent;
+    width: 32px;
+    font-size: 16px;
+    border: 0;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    height: 34px;
+    -webkit-appearance: none;
+    margin: .2rem;
+    padding-left: .5rem;
+}
+
+.comboBoxTreino option {
+    background-color: rgb(12, 12, 12);
+    color: white;
+    border: 0;
+}
+
+
 
 .txtLabelPericia{
 }
@@ -102,38 +160,31 @@ td th{
     
 }
 
-
-
-
 .infosGerais{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin: 2rem 0 2rem 0;
+    margin: 2rem 4rem;
 
 }
 
 
 .listaSelecionarParte{
     display: flex;
-    gap: 1rem;
+    justify-content: center;
     margin-bottom: 2rem;
+    width: 30vw;
+    gap: .7rem;
 }
 
 .partes{
     display: flex;
-    justify-content: center;
     color: white;
 
 }
 
-.esquerda, .meio, .direita{
-    width: 24%;
-}
-
 .esquerda{
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 0;
+    width: 28vw;
+    margin-left: 4rem;
 }
 
 .direita{
@@ -141,6 +192,11 @@ td th{
     flex-direction: column;
     padding: 1rem;
     align-items: center;
+}
+
+.meio{
+    padding: 1rem;
+    width: 20vw;
 }
 
 .botaoAdicionar{
@@ -189,8 +245,12 @@ td th{
     left: 10px;
 }
 
-.addAtaque {
+#addAtaque {
     
+}
+
+#addHabilidade {
+    width: max-content;
 }
 
 .popup {
@@ -208,17 +268,20 @@ td th{
     border-radius: 10px;
 }
 
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
 .linhadiv {
     display: flex;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 .linhadiv input {
     margin-left: .2rem;
     margin-right: .2rem;
-    border: none;
-    padding-left: .1rem;
 }
 
 .linhadiv select {
@@ -231,11 +294,7 @@ td th{
 }
 
 .sNex {
-    width: 2.5rem;
-}
-
-.InputsDeslocamento{
-    width: 1.8rem;
+    
 }
 
 .InputsDeslocamento:disabled{
@@ -249,51 +308,78 @@ td th{
     margin-top: 1rem;
 }
 
-.sVida{
-    margin-right: .3rem;
-}
-.sSanidade {
-    margin-right: .3rem;
-}
-.sEsforco {
+.status-label{
     margin-right: .3rem;
 }
 
-.InputsVidaAtual {
-    width: 1.5rem;
-}
-.InputsVidaTotal {
-    width: 1.5rem;
+.Inputquadrado {
+    outline: none;
+    border: 1px white solid;
 }
 
-.InputsSanidadeAtual {
-    width: 1.5rem;
-}
-.InputsSanidadeTotal {
-    width: 1.5rem;
+.Inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.3rem;
+    color: white;
+    background-color: transparent;
+    padding: .1rem .2rem .1rem .5rem;
 }
 
-.InputsEsforcoAtual {
-    width: 1.5rem;
+.Inputs:disabled {
+    width: 2.3rem;
+    color: white;
+    border-bottom: 1px solid white;
+    outline: 0;
+    background-color: transparent;
+    padding: .1rem .2rem .1rem .45rem;
 }
 
-.InputsEsforcoTotal {
-    width: 1.5rem;
+.partes select {
+    background-color: transparent;
+    color: white;
+    outline: none;
 }
 
 .InputsDefesa {
     margin-bottom: .1rem;
-    width: 1.5rem;
 }
 .InputsBloqueio {
     margin-bottom: .1rem;
-    width: 1.5rem;
 }
 .InputsEsquiva {
     margin-bottom: .1rem;
-    width: 1.5rem;
 }
 
 .statusdef {
+    padding-top: 5rem;
+}
 
+.btn-core {
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    padding: .72rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #A347FF;
+    text-decoration: none;
+    width: fit-content;
+}
+
+.poder-paranormal {
+    background-color: rgb(53, 53, 53);
+    margin-top: 1.2rem;
+    padding: .6rem;
+}
+
+.limite-de-itens {
+    width: 1.4rem;
+    margin-left: .5rem;
+    padding: .3rem;
+}
+
+.texto-cinza {
+    color: gray;
 }

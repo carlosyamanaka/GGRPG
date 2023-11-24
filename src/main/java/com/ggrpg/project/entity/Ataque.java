@@ -33,6 +33,7 @@ public class Ataque implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_ataque;
+    private String nome;
     private String arma;
     private String teste;
     private Integer dano;
@@ -41,8 +42,9 @@ public class Ataque implements Serializable {
     @JoinColumn(name = "id_ficha", nullable = false)
     private Ficha ficha;
 
-    public Ataque(Integer id_ataque, String arma, String teste, Integer dano) {
+    public Ataque(Integer id_ataque,String nome,  String arma, String teste, Integer dano) {
         this.id_ataque = id_ataque;
+        this.nome = nome;
         this.arma = arma;
         this.teste = teste;
         this.dano = dano;
