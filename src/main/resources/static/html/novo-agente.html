@@ -208,18 +208,43 @@
         <div class="toques-finais">
             <div class="meia-pagina3">
                 <label for="personagem-input" class="jogador-label">Personagem</label>
-                <input type="text" class="jogador-input" name="nomepersonagem" placeholder="Nome do personagem">
+                <input type="text" class="jogador-input" name="nomepersonagem" placeholder="Nome do personagem" id="nomeDoPersonagem">
             </div>
             <div class="meia-pagina3">
                 <label for="jogador-input" class="jogador-label">Jogador</label>
-                <input type="text" class="jogador-input" name="nomejogador" placeholder="Nome do jogador">
+                <input type="text" class="jogador-input" name="nomejogador" placeholder="Nome do jogador" id="nomeDoJogador">
             </div>
-            <button class="btn-core" onclick="criarPersonagem()">FINALIZAR</button>
+            <button class="btn-core" onclick="createFicha()">FINALIZAR</button>
         </div>
 
     </div>
     
-
+<script>
+    function createFicha() {
+        const nomeDoPersonagem = document.getElementById('nomeDoPersonagem').value;
+        const nomeDoJogador = document.getElementById('nomeDoJogador').value;
+        const sistema = "Ordem Paranormal"
+      
+        const ficha = {
+          nomeDoPersonagem,
+          nomeDoJogador,
+          sistema,
+          jogador: {
+            id_usuario: 1,
+            nome: nomeDoJogador
+          }
+        };
+      
+        axios.post('http://localhost:8080/fichas', ficha)
+          .then(response => {
+            console.log('Ficha created:', response.data);
+          })
+          .catch(error => {
+            console.error('Error creating ficha:', error);
+          });
+      };
+      
+</script>
 </body>
 
 <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>

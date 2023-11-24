@@ -27,7 +27,9 @@ public class Ficha implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Id
+    
+
+    @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_ficha;
     private String nomeDoPersonagem;

@@ -31,7 +31,7 @@ function escolheClasse(tipo) {
         habilidade = axios.get('http://localhost:8080/habilidades/4');
     }else if(classe == 'especialista') {
         habilidade = axios.get('http://localhost:8080/habilidades/5');
-    }else if(classe == ''){
+    }else if(classe == 'ocultista'){
         habilidade = axios.get('http://localhost:8080/habilidades/6');
     }
 }
@@ -56,6 +56,27 @@ function criarPersonagem(){
         console.log(dados);
     });
 
+    
+    function createFicha() {
+        const nomeDoPersonagem = document.getElementById('nomeDoPersonagem').value;
+        const nomeDoJogador = document.getElementById('nomeDoJogador').value;
+        const sistema = "Ordem Paranormal"
+    
+        const ficha = {
+            nomeDoPersonagem,
+            nomeDoJogador,
+            sistema,
+            id_usuario: 1
+        };
+    
+        axios.post('http://localhost:8080/fichas', ficha)
+            .then(response => {
+                console.log('Ficha created:', response.data);
+            })
+            .catch(error => {
+                console.error('Error creating ficha:', error);
+            });
+    };
     
 
 //     const { data } = await axios.post('/fichas', {
