@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,6 +18,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "habilidade_tp")
 public class Habilidade implements Serializable {
@@ -33,11 +35,5 @@ public class Habilidade implements Serializable {
     @ManyToOne
     @JoinColumn(name = "id_ficha", nullable = false)
     private Ficha ficha;
-
-    public Habilidade(Integer id_habilidade, String descricao, Integer pagina) {
-        this.id_habilidade = id_habilidade;
-        this.descricao = descricao;
-        this.pagina = pagina;
-    }
 
 }

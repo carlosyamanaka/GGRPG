@@ -69,23 +69,23 @@
             <div class="meia-pagina2">
                 <div class="atributos">
                     <label class="atributo" for="">FOR: </label>
-                    <input class="atributo-input" type="text" value="1">
+                    <input class="atributo-input" name="forcaPagina1" type="text" value="1">
                 </div>
                 <div class="atributos">
                     <label class="atributo" for="">AGI: </label>
-                    <input class="atributo-input" type="text" value="1">
+                    <input class="atributo-input" name="agilidadePagina1" type="text" value="1">
                 </div>
                 <div class="atributos">
                     <label class="atributo" for="">INT: </label>
-                    <input class="atributo-input" type="text" value="1">
+                    <input class="atributo-input" name="intelectoPagina1" type="text" value="1">
                 </div>
                 <div class="atributos">
                     <label class="atributo" for="">PRE: </label>    
-                    <input class="atributo-input" type="text" value="1">
+                    <input class="atributo-input" name="presencaPagina1" type="text" value="1">
                 </div>
                 <div class="atributos">
                     <label class="atributo" for="">VIG: </label>
-                    <input class="atributo-input" type="text" value="1">
+                    <input class="atributo-input" name="vigorPagina1" type="text" value="1">
                 </div>
             </div>
         </div>
@@ -115,7 +115,7 @@
         <div class="card-origem">
             <div class="reta">
                 <p class="origem-nome">Artista</p>
-                <button class="escolher-origem btn-core" onclick="editanovoagente(3)">ESCOLHER</button>
+                <button class="escolher-origem btn-core" onclick="editanovoagente(3), escolheOrigem('artista')">ESCOLHER</button>
             </div>
                 <p>Você era um ator, músico, escritor, dançarino, influenciador... Seu trabalho pode ter sido inspirado por uma experiência
                 paranormal do passado e o que o público acha que é pura criatividade, a Ordem sabe que tem um lado mais sombrio.</p>
@@ -129,7 +129,7 @@
         <div class="card-origem">
             <div class="reta">
                 <p class="origem-nome">Cultista arrependido</p>
-                <button class="escolher-origem btn-core" onclick="editanovoagente(3)">ESCOLHER</button>
+                <button class="escolher-origem btn-core" onclick="editanovoagente(3), escolheOrigem('cultista arrependido')">ESCOLHER</button>
             </div>
             <p>Você fez parte de um culto paranormal. Talvez fossem ignorantes iludidos, que acreditavam estar contatando entidades
             benevolentes. Talvez soubessem exatamente o que estavam fazendo. Seja como for, algo abriu seus olhos e agora você luta
@@ -142,7 +142,7 @@
         <div class="card-origem">
             <div class="reta">
                 <p class="origem-nome">Atleta</p>
-                <button class="escolher-origem btn-core" onclick="editanovoagente(3)"   >ESCOLHER</button>
+                <button class="escolher-origem btn-core" onclick="editanovoagente(3), escolheOrigem('atleta')">ESCOLHER</button>
             </div>
             <p>Você competia em um esporte individual ou por equipe, como natação ou futebol. Seu alto desempenho pode ser fruto de
             alguma influência paranormal que nem mesmo você conhecia ou você pode ter se envolvido em algum evento paranormal em uma
@@ -170,7 +170,7 @@
         <div class="card-origem">
             <div class="reta">
                 <p class="origem-nome" >Combatente</p>
-                <button class="escolher-origem btn-core" onclick="editanovoagente(4)">ESCOLHER</button>
+                <button class="escolher-origem btn-core" onclick="editanovoagente(4), escolheClasse('combatente')">ESCOLHER</button>
             </div>
             <p><strong>Treinado para lutar com todo tipo de armas, e com a força e a coragem para encarar os perigos de frente, É o tipo de
             agente que prefere abordagens mais diretas e costuma atirar primeiro e perguntar depois.</strong></p>
@@ -179,7 +179,7 @@
         <div class="card-origem">
             <div class="reta">
                 <p class="origem-nome">Especialista</p>
-                <button class="escolher-origem btn-core" onclick="editanovoagente(4)">ESCOLHER</button>
+                <button class="escolher-origem btn-core" onclick="editanovoagente(4), escolheClasse('especialista')">ESCOLHER</button>
             </div>
             <p><strong>Um agente que confia mais em esperteza do que em força bruta. Um especialista se vale de conhecimento técnico,
             raciocínio rápido ou mesmo lábia para resolver mistérios e enfrentar o paranormal.</strong></p>
@@ -188,7 +188,7 @@
         <div class="card-origem">
             <div class="reta">
                 <p class="origem-nome">Ocultista</p>
-                <button class="escolher-origem btn-core" onclick="editanovoagente(4)">ESCOLHER</button>
+                <button class="escolher-origem btn-core" onclick="editanovoagente(4), escolheClasse('ocultista')">ESCOLHER</button>
             </div>
             <p><strong>O Outro Lado é misterioso, perigoso e, de certa forma, cativante. Muitos estudiosos das entidades se perdem em seus
             reinos obscuros em busca de poder, mas existem aqueles que visam compreender e dominar os mistérios paranormais para
@@ -208,13 +208,13 @@
         <div class="toques-finais">
             <div class="meia-pagina3">
                 <label for="personagem-input" class="jogador-label">Personagem</label>
-                <input type="text" class="jogador-input" placeholder="Nome do personagem">
+                <input type="text" class="jogador-input" name="nomepersonagem" placeholder="Nome do personagem">
             </div>
             <div class="meia-pagina3">
                 <label for="jogador-input" class="jogador-label">Jogador</label>
-                <input type="text" class="jogador-input" placeholder="Nome do jogador">
+                <input type="text" class="jogador-input" name="nomejogador" placeholder="Nome do jogador">
             </div>
-            <button class="btn-core" onclick="criarficha()">FINALIZAR</button>
+            <button class="btn-core" onclick="criarPersonagem()">FINALIZAR</button>
         </div>
 
     </div>
@@ -224,6 +224,9 @@
 
 <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth-compat.js"></script>
+
+<!-- axios, fazendo request pro bancospro  -->
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 

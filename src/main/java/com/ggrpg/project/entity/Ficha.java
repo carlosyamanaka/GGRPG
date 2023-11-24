@@ -39,12 +39,6 @@ public class Ficha implements Serializable {
     @JoinColumn(name = "id_usuario", nullable = false)
     private Usuario usuario;
 
-    @OneToOne
-    private Atributo atributo;
-
-    @OneToOne
-    private Propriedade propriedade;
-
     @OneToOne(mappedBy = "ficha")
     private Inventario inventario;
 

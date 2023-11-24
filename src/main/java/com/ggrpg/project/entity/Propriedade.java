@@ -45,20 +45,38 @@ public class Propriedade implements Serializable {
     private Ficha ficha;
 
     //Criar ficha
-    public Propriedade(Integer nex, Integer id_propriedade, String origem, String classe, Integer peTot, Integer pvTot, Integer sanidadeTot, Integer defesa, Integer peAtual, Integer peRodada, Integer pvAtual, Integer deslocamento, Integer sanidadeAtual) {
+    public Propriedade(Atributo atributo, Integer id_propriedade, String origem, String classe, Integer peTot, Integer pvTot, Integer sanidadeTot, Integer defesa) {
         this.id_propriedade = id_propriedade;
         this.origem = origem;
         this.classe = classe;
-        this.nex = nex;
-        this.peRodada = peRodada;
-        this.peTot = peTot;
-        this.peAtual = peAtual;
-        this.pvTot = pvTot;
-        this.pvAtual = pvAtual;
-        this.deslocamento = deslocamento;
-        this.sanidadeTot = sanidadeTot;
-        this.sanidadeAtual = sanidadeAtual;
-        this.defesa = defesa;
+        this.nex = 5;
+        this.peRodada = 1;
+        if(classe == "combatente"){
+            this.peTot = 2+atributo.getPresenca();
+        } else if(classe == "especialista"){
+            this.peTot = 3+atributo.getPresenca();
+        } else if(classe == "ocultista"){
+            this.peTot = 4+atributo.getPresenca();
+        }
+        this.peAtual = peTot;
+        if(classe == "combatente"){
+            this.pvTot = 12+atributo.getVigor();
+        } else if(classe == "especialista"){
+            this.pvTot = 16+atributo.getVigor();
+        } else if(classe == "ocultista"){
+            this.pvTot = 20+atributo.getVigor();
+        }
+        this.pvAtual = pvTot;
+        this.deslocamento = 9;
+        if(classe == "combatente"){
+            this.sanidadeTot = 12;
+        } else if(classe == "especialista"){
+            this.sanidadeTot = 16;
+        } else if(classe == "ocultista"){   
+            this.sanidadeTot = 20;
+        }
+        this.sanidadeAtual = sanidadeTot;
+        this.defesa = 10+atributo.getAgilidade();
     }
 
 }

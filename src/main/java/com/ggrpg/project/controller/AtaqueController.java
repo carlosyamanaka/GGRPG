@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.ggrpg.project.entity.Ataque;
-import com.ggrpg.project.entity.Ficha;
 import com.ggrpg.project.repository.AtaqueRepository;
 import com.ggrpg.project.service.AtaqueService;
 
@@ -32,7 +30,6 @@ import com.ggrpg.project.service.AtaqueService;
 
 @RestController
 @RequestMapping(value = "/ataques")
-@CrossOrigin(origins = "*")
 public class AtaqueController {
 
     @Autowired
@@ -40,8 +37,6 @@ public class AtaqueController {
 
     @Autowired
     AtaqueRepository repository;
-
-
 
     @GetMapping
     public ResponseEntity<List<Ataque>> findAll() {
@@ -54,7 +49,6 @@ public class AtaqueController {
         Ataque obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
-
 
     @PostMapping
     public ResponseEntity<Ataque> insert(@RequestBody Ataque obj) {

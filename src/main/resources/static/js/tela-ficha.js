@@ -38,7 +38,10 @@ function postarAtaque(){
             nome: nome,
             arma: arma,
             dano: dano,
-            teste: teste
+            teste: teste,
+            ficha:{
+                
+            }
         };
 
         axios.post(urlBase("/ataques"), novoAtaque)
@@ -52,6 +55,69 @@ function postarAtaque(){
 }
     
 /////////////////////////////////////////////
+
+// async function consultaRitual() {
+//     try {
+//         const response = await axios.get('/rituais');
+//         const rituais = response.data;
+
+//         // Aqui você pode manipular os dados recebidos, por exemplo, adicionar à tabela
+//         rituais.forEach(ritual => {
+//             // Adicione lógica para inserir na tabela
+//             console.log(ritual);
+//         });
+//     } catch (error) {
+//         console.error('Erro ao consultar rituais:', error);
+//     }
+// }
+
+
+// async function putRitual() {
+//     try {
+//         const id = selectTabela.getRow1.value; // Certifique-se de que esta parte está correta
+//         const response = await axios.get(`/rituais/${id}`);
+//         const ritual = response.data;
+
+//         // Aqui você pode manipular os dados do ritual antes de enviar a atualização
+//         // Exemplo: ritual.descricao = 'Nova Descrição';
+
+//         await axios.put(`/rituais/${id}`, ritual);
+//         console.log('Ritual atualizado com sucesso.');
+//     } catch (error) {
+//         console.error('Erro ao atualizar ritual:', error);
+//     }
+// }
+
+
+// function consultaHabilidade(){
+//     selectTabela
+//     objRecebeuBD = axios.getAll
+//     objRecebeuBD.forEach(function (){
+//         selectTabela.insert(objRecebeuBD)
+//     }   
+// }
+
+// function putHabilidade(){
+//     id = selectTabela.getRow1.value;
+//     ritual =  axios.getRitualByID(id)
+//     axios.put(Habilidade);
+// }
+
+// function consultaItem(){
+//     selectTabela
+//     objRecebeuBD = axios.getAll
+//     objRecebeuBD.forEach(function (){
+//         selectTabela.insert(objRecebeuBD)
+//     }   
+// }
+
+// function putItem(){
+//     id = selectTabela.getRow1.value;
+//     ritual =  axios.getRitualByID(id)
+//     axios.put(Item);
+// }
+
+
 
 
 function criarAtaques(listaDeAtaques) {

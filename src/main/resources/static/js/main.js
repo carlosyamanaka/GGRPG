@@ -17,6 +17,12 @@ function logout(){
 
 }
 
-function criarficha(){
-    window.location.href = "http://127.0.0.1:5500/src/main/resources/static/html/telaficha.html";
-}
+// function pegarDadosFirebase() {
+//     this.http.get('https://ggrpg-2d938-default-rtdb.firebaseio.com')
+//         .map(res => res.json())
+//         .subscribe(data => {
+//         console.log(data, 'dados do firebase')
+//     })
+// }
+
+// pegarDadosFirebase();

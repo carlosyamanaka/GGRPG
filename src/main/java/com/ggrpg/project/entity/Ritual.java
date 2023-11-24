@@ -9,6 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,7 +36,7 @@ public class Ritual implements Serializable {
     @JoinColumn(name = "id_ficha", nullable = false)
     private Ficha ficha;
 
-    public Ritual(Integer id_ritual, String circulo, String descricao, Integer pagina) {
+    public Ritual(Integer id_ritual, String circulo, String descricao, Integer custo, Integer pagina, Integer dt) {
         this.id_ritual = id_ritual;
         this.circulo = circulo;
         this.descricao = descricao;
