@@ -120,6 +120,32 @@ input[type=number] {
     outline: none;
 }
 
+.comboBoxNex {
+    overflow: hidden;
+    background: none;
+    background-color: transparent;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.comboBoxNex select {
+    background: transparent;
+    font-size: 16px;
+    border: 0;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    height: 20px;
+    -webkit-appearance: none;
+    margin: .2rem;
+    padding-left: .5rem;
+}
+
+.comboBoxNex option {
+    background-color: rgb(12, 12, 12);
+    color: white;
+    border: 0;
+}
+
 .comboBoxTreino{
     width: 15px;
     height: 32px;
@@ -282,11 +308,6 @@ input[type=number] {
 .linhadiv input {
     margin-left: .2rem;
     margin-right: .2rem;
-}
-
-.linhadiv select {
-    border: none;
-    padding-left: .1rem;
 }
 
 .InputsPeRodada {
