@@ -23,11 +23,13 @@
 </head>
 <body>
     <div class="popup" id="addAtaque" style="display: none;">
+        <form action="" id="formAddAtaque">
+
         <h2>Criando novo ataque</h2>
-        <input type="text" name="nome" placeholder="Novo ataque">
-        <input type="text" name="arma" placeholder="Arma">
-        <input type="number" name="dano" placeholder="Dano">
-        <select name="teste">
+        <input type="text" name="AddAtaqueNome" placeholder="Novo ataque">
+        <input type="text" name="AddAtaqueArma" placeholder="Arma">
+        <input type="number" name="AddAtaqueDano" placeholder="Dano">
+        <select name="AddAtaqueTeste">
             <option value=""></option>
             <option value="forca">Força</option>
             <option value="agilidade">Agilidade</option>
@@ -37,8 +39,9 @@
         </select>
         <div class="space-between">        
             <button class="btn-core" onclick="fecharpopup('addAtaque')">Cancelar</button>
-            <input class="btn-core" type="submit" value="Adicionar">
+            <input class="btn-core" type="submit" value="Adicionar" onclick="postarAtaque()">
         </div>
+    </form>
     </div>
 
     <div class="popup" id="addHabilidade" style="display: none;">

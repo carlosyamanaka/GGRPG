@@ -17,50 +17,58 @@ function fecharpopup(popup){
 
 
 
+var baseUrl = "http://localhost:8080";
+
+function urlBase(endpoint) {
+    return baseUrl + endpoint;
+}
 
 
+function postarAtaque(){
+    var form = document.getElementById('formAddAtaque');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
 
+        var nome = document.querySelector('input[name="AddAtaqueNome"]').value;
+        var arma = document.querySelector('input[name="AddAtaqueArma"]').value;
+        var dano = document.querySelector('input[name="AddAtaqueDano"]').value;
+        var teste = document.querySelector('select[name="AddAtaqueTeste"]').value;
 
+        var novoAtaque = {
+            nome: nome,
+            arma: arma,
+            dano: dano,
+            teste: teste
+        };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        axios.post(urlBase("/ataques"), novoAtaque)
+            .then(function (response) {
+                console.log('FOIII', response.data);
+            })
+            .catch(function (error) {
+                console.error('ISHH', error);
+            });
+    });    
+}
+    
 /////////////////////////////////////////////
 
-document.addEventListener('DOMContentLoaded', function () {
-    var listaDeAtaquesExemplo = [
-        { arma: 'Espada', teste: 'Força', dano: '1d8' },
-        { arma: 'Arco', teste: 'Destreza', dano: '1d10' },
-        { arma: 'Cajado', teste: 'Inteligência', dano: '1d6' },
-    ];
-    criarAtaques(listaDeAtaquesExemplo);
-});
 
 function criarAtaques(listaDeAtaques) {
     var divAtaques = document.getElementById('ataquesContainer');
-    divAtaques.innerHTML = ''; // Reset once before adding attacks
+    divAtaques.innerHTML = ''; 
 
     listaDeAtaques.forEach(function (ataque, index) {
-        // Create attack container
+
         var divAtaque = document.createElement('div');
         divAtaque.classList.add('ataque');
 
-        // Create attack elements
+
         var tituloH2 = document.createElement('h2');
         tituloH2.textContent = 'Novo Ataque';
         divAtaque.appendChild(tituloH2);
 
-        // Create dados element
+
         var divDados = document.createElement('div');
         divDados.classList.add('dados');
 
@@ -78,7 +86,7 @@ function criarAtaques(listaDeAtaques) {
             divDados.appendChild(divDado);
         });
 
-        // Add dados element to attack container
+
         divAtaque.appendChild(divDados);
 
         // Create botoes element
