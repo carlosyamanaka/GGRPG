@@ -39,7 +39,7 @@ var infos;
             cardAgente.appendChild(h3NomeJogador);
             cardAgente.appendChild(pClasseJogador);
 
-            //todosAgentes.appendChild(cardAgente);
+            todosAgentes.appendChild(cardAgente);
           }
 
           const divs = document.querySelectorAll('.cardagente');
