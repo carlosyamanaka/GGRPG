@@ -30,9 +30,7 @@ public class Inventario implements Serializable {
     private Integer[] capacidade_cat = new Integer[4];
     private String limite_credito;
 
-    @OneToOne
-    @JoinColumn(name = "id_ficha", nullable = false)
-    private Ficha ficha;
+    private Integer id_ficha;
 
     @OneToMany(mappedBy = "inventario")
     private List<Item> items;

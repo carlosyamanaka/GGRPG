@@ -9,6 +9,23 @@ function editanovoagente(step) {
     document.getElementById(`step${step}`).style.display = 'block';
 }
 
+const currentUser = firebase.auth().currentUser;
+
+const auth = firebase.auth();
+
+function recuperarUsuario() {
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            const emailUser = user.email;
+            return emailUser;
+        } else {
+            console.log("Usuário não está logado");
+        }
+    });
+}
+
+
+
 var origem;
 function escolheOrigem(tipo) {
     origem = tipo;
@@ -36,97 +53,47 @@ function escolheClasse(tipo) {
     }
 }
 
-function criarficha(){
-    window.location.href = "http://127.0.0.1:5500/src/main/resources/static/html/telaficha.html";
-}
 
 
-function criarPersonagem(){
-    
+function createFicha() {
+    const nomeDoPersonagem = document.getElementById('nomeDoPersonagem').value;
+    const nomeDoJogador = document.getElementById('nomeDoJogador').value;
+    const emailUser = recuperarUsuario();
+    axios.post('http://localhost:8080/fichas', {
+        "nomeDoPersonagem": nomeDoPersonagem,
+        "nomeDoJogador": nomeDoJogador,
+        "sistema": "Ordem Paranormal",
+        "email_usuario": emailUser
+    })
+        .then(response => {
+            console.log('Ficha created:', response.data);
+
+        })
+        .catch(error => {
+            console.error('Error creating ficha:', error);
+        });
+};
+
+
+function criarPersonagem() {
+
+    createFicha();
+
     const novoatributo = {
         forca: document.querySelector('input[name="forcaPagina1"]').value,
         agilidade: document.querySelector('input[name="agilidadePagina1"]').value,
         intelecto: document.querySelector('input[name="intelectoPagina1"]').value,
         presenca: document.querySelector('input[name="presencaPagina1"]').value,
-        vigor: document.querySelector('input[name="vigorPagina1"]').value
+        vigor: document.querySelector('input[name="vigorPagina1"]').value,
+        id_ficha: 9
     }
-    
+
     api.post('/atributos', novoatributo).then(response => {
         const dados = response.data;
-        console.log(dados);
+        console.log(dados); 
     });
 
+    window.location.href = "agentes.html"
+}
+
     
-    function createFicha() {
-        const nomeDoPersonagem = document.getElementById('nomeDoPersonagem').value;
-        const nomeDoJogador = document.getElementById('nomeDoJogador').value;
-        const sistema = "Ordem Paranormal"
-    
-        const ficha = {
-            nomeDoPersonagem,
-            nomeDoJogador,
-            sistema,
-            id_usuario: 1
-        };
-    
-        axios.post('http://localhost:8080/fichas', ficha)
-            .then(response => {
-                console.log('Ficha created:', response.data);
-            })
-            .catch(error => {
-                console.error('Error creating ficha:', error);
-            });
-    };
-    
-
-//     const { data } = await axios.post('/fichas', {
-//         nomeDoPersonagem: document.querySelector('input[name="nomepersonagem"]').value,
-//         nomeDoJogador: document.querySelector('input[name="nomejogador"]').value,
-//         sistema:"Ordem Paranormal",
-//         usuario:{
-            
-//         },
-//         atributo: novoatributo,
-                    
-//         propriedade: {
-//             origem: origem,
-//             classe: classe,
-//             trilha: 
-//             nex: 
-//             peRodada:
-//             peTot:
-//             peAtual:
-//             pvTot:
-//             pvAtual:
-//             deslocamento:
-//             sanidadeTot:
-//             sanidadeAtual:
-//             defesa:
-//         },
-//         inventario:{
-                
-//         },
-//         habilidades: habilidade,
-//         pericia:{
-                
-//         },
-//         rituais:{
-
-//         },
-//         ataques:{
-
-//         }
-//     });
-// }
-
-
-
-// var novoAtaque = {
-//     nome: nome,
-//     arma: arma,
-//     dano: dano,
-//     teste: teste,
-//     ficha:{
-        
-//     }
-};

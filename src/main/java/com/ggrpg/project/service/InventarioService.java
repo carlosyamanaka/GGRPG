@@ -44,6 +44,7 @@ public class InventarioService {
         entity.setLotacao(obj.getLotacao());
         entity.setCapacidade_cat(obj.getCapacidade_cat());
         entity.setLimite_credito(obj.getLimite_credito());
+        entity.setId_ficha(obj.getId_ficha());
     }
 
 }

@@ -27,7 +27,6 @@ public class Ficha implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    
 
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,34 +35,14 @@ public class Ficha implements Serializable {
     private String nomeDoJogador;
     private String sistema;
 
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "id_usuario", nullable = false)
-    private Usuario usuario;
+    private String email_usuario;
 
-    @OneToOne(mappedBy = "ficha")
-    private Inventario inventario;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "ficha")
-    private List<Habilidade> habilidades;
-
-    @OneToOne(mappedBy = "ficha")
-    private Pericia pericia;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "ficha")
-    private List<Ritual> rituais;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "ficha")
-    private List<Ataque> ataques;
-
-    public Ficha(Integer id_ficha, String nomeDoPersonagem, String nomeDoJogador, String sistema) {
+    public Ficha(Integer id_ficha, String nomeDoPersonagem, String nomeDoJogador, String sistema, String email_usuario) {
         this.id_ficha = id_ficha;
         this.nomeDoPersonagem = nomeDoPersonagem;
         this.nomeDoJogador = nomeDoJogador;
         this.sistema = sistema;
+        this.email_usuario = email_usuario;
     }
 
     // Quando a explicação de relacionamentos:

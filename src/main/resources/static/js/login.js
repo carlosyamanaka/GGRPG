@@ -1,4 +1,3 @@
-
 // Isso aq verifica se o usuario ta logado
 firebase.auth().onAuthStateChanged(user =>{
     if(user){
@@ -19,7 +18,7 @@ function login() {
             firebase.auth().signInWithEmailAndPassword(
                 email, senha
             ).then((response) => {
-                console.log("sucesso", response);
+                console.log("sucesso1", response);
                 window.location.href = "index.html"
             }).catch(error => {
                 const errorMessage = getErrorMessage(error);
@@ -32,7 +31,7 @@ function login() {
             firebase.auth().signInWithEmailAndPassword(
                 email, senha
             ).then((response) => {
-                console.log("sucesso", response);
+                console.log("sucesso2", response);
                 window.location.href = "index.html"
             }).catch(error => {
                 const errorMessage = getErrorMessage(error);
@@ -62,6 +61,9 @@ function register() {
         email, senha
     ).then((response) => {  
         window.location.href = "index.html"
+        api.post('/usuarios', {
+            email: email
+       })
     }).catch(error => {
         const errorMessage = getErrorMessage(error);
         toastr.error(errorMessage);

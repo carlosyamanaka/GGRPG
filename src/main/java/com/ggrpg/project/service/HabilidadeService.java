@@ -47,6 +47,7 @@ public class HabilidadeService {
     private void updateData(Habilidade entity, Habilidade obj) {
         entity.setDescricao(obj.getDescricao());
         entity.setPagina(obj.getPagina());
+        entity.setId_ficha(obj.getId_ficha());
     }
 
 }

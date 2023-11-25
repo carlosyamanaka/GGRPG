@@ -20,8 +20,8 @@ import com.ggrpg.project.entity.Ficha;
 import com.ggrpg.project.service.FichaService;
 
 @RestController
-@CrossOrigin(origins = "*")
 @RequestMapping(value = "/fichas")
+@CrossOrigin(origins="*")
 public class FichaController {
 
     @Autowired

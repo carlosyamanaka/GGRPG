@@ -39,21 +39,23 @@ function postarAtaque(){
             arma: arma,
             dano: dano,
             teste: teste,
-            ficha:{
-                
-            }
+            id_ficha: fichinha
         };
 
         axios.post(urlBase("/ataques"), novoAtaque)
             .then(function (response) {
-                console.log('FOIII', response.data);
+                console.log('gg', response.data);
             })
             .catch(function (error) {
-                console.error('ISHH', error);
+                console.error('rpg', error);
             });
     });    
 }
     
+
+
+
+
 /////////////////////////////////////////////
 
 // async function consultaRitual() {
@@ -179,4 +181,35 @@ function criarAtaques(listaDeAtaques) {
     });
 }
 
-criarAtaques(listaDeAtaquesExemplo);
+// criarAtaques(listaDeAtaquesExemplo);
+
+
+
+
+// parte ataques:
+
+
+
+function adicionarAtaque(){}
+function povoarAtaque(){}
+function atualizaAtaque(){}
+function deletaAtaque(){}
+
+
+
+function adicionarHabilidade(){}
+function povoarHabilidade(){}
+function atualizaHabilidade(){}
+function deletaHabilidade(){}
+
+
+function adicionarRitual(){}
+function povoarRitual(){}
+function atualizaRitual(){}
+function deletaRitual(){}
+
+
+function adicionarItem(){}
+function povoarItem(){}
+function atualizaItem(){}
+function    deletaItem(){}

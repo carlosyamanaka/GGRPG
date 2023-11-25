@@ -32,8 +32,6 @@ public class Habilidade implements Serializable {
     private String descricao;
     private Integer pagina;
 
-    @ManyToOne
-    @JoinColumn(name = "id_ficha", nullable = false)
-    private Ficha ficha;
+    private Integer id_ficha;
 
 }

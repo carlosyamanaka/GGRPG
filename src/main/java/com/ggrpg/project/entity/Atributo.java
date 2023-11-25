@@ -31,18 +31,17 @@ public class Atributo implements Serializable {
     private Integer presenca;
     private Integer vigor;
 
-    @OneToOne
-    @JoinColumn(name = "id_ficha", nullable = false)
-    private Ficha ficha;
+    private Integer id_ficha;
 
     public Atributo(Integer id_atributo, Integer forca, Integer agilidade, Integer intelecto, Integer vigor,
-            Integer presenca) {
+            Integer presenca, Integer id_ficha) {
         this.id_atributo = id_atributo;
         this.forca = forca;
         this.agilidade = agilidade;
         this.intelecto = intelecto;
         this.vigor = vigor;
         this.presenca = presenca;
+        this.id_ficha = id_ficha;
     }
 
 }

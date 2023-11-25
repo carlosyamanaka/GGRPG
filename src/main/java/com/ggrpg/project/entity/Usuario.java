@@ -25,20 +25,14 @@ public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_usuario;
-    private String username;
-    private String senha;
     private String email;
 
-    // Um usuário pode ter uma LISTA de fichas, e no caso do usuário vai ser (Um
-    // usuário para muitas fichas -> One(Usuário) to Many!)
-    @OneToMany(mappedBy = "usuario")
-    private List<Ficha> fichas;
-
-    public Usuario(Integer id_usuario, String username, String senha, String email) {
+    public Usuario(Integer id_usuario, String email) {
         this.id_usuario = id_usuario;
-        this.username = username;
-        this.senha = senha;
         this.email = email;
     }
 
+    public Usuario(String email) {
+        setEmail(email);
+    }
 }

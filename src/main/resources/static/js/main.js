@@ -16,13 +16,3 @@ function logout(){
     })
 
 }
-
-// function pegarDadosFirebase() {
-//     this.http.get('https://ggrpg-2d938-default-rtdb.firebaseio.com')
-//         .map(res => res.json())
-//         .subscribe(data => {
-//         console.log(data, 'dados do firebase')
-//     })
-// }
-
-// pegarDadosFirebase();
