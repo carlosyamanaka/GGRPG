@@ -2,13 +2,7 @@ package com.ggrpg.project.entity;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -51,6 +45,7 @@ public class Propriedade implements Serializable {
         this.classe = classe;
         this.nex = 5;
         this.peRodada = 1;
+
         if(classe == "combatente"){
             this.peTot = 2+atributo.getPresenca();
         } else if(classe == "especialista"){

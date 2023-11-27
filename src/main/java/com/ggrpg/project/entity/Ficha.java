@@ -34,8 +34,36 @@ public class Ficha implements Serializable {
     private String nomeDoPersonagem;
     private String nomeDoJogador;
     private String sistema;
-
     private String email_usuario;
+
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", nullable = false)
+    private Usuario usuario;
+
+    @OneToOne
+    private Atributo atributo;
+
+    @OneToOne
+    private Propriedade propriedade;
+
+    @OneToOne(mappedBy = "ficha")
+    private Inventario inventario;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "ficha")
+    private List<Habilidade> habilidades;
+
+    @OneToOne(mappedBy = "ficha")
+    private Pericia pericia;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "ficha")
+    private List<Ritual> rituais;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "ficha")
+    private List<Ataque> ataques;
 
     public Ficha(Integer id_ficha, String nomeDoPersonagem, String nomeDoJogador, String sistema, String email_usuario) {
         this.id_ficha = id_ficha;

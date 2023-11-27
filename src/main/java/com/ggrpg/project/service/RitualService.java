@@ -47,6 +47,6 @@ public class RitualService {
         entity.setCirculo(obj.getCirculo());
         entity.setDescricao(obj.getDescricao());
         entity.setPagina(obj.getPagina());
-        entity.setId_ficha(obj.getId_ficha());
+        entity.setFicha(obj.getFicha());
     }
 }

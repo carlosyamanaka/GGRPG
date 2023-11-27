@@ -38,14 +38,17 @@ public class Ataque implements Serializable {
     private String teste;
     private Integer dano;
 
-    private Integer id_ficha;
+    @ManyToOne
+    @JoinColumn(name = "id_ficha", nullable = false)
+    private Ficha ficha;
 
-    public Ataque(Integer id_ataque,String nome,  String arma, String teste, Integer dano) {
+    public Ataque(Integer id_ataque,String nome,  String arma, String teste, Integer dano, Ficha ficha) {
         this.id_ataque = id_ataque;
         this.nome = nome;
         this.arma = arma;
         this.teste = teste;
         this.dano = dano;
+        this.ficha = ficha;
     }
 
 }

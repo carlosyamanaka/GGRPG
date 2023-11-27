@@ -3,14 +3,7 @@ package com.ggrpg.project.entity;
 import java.io.Serializable;
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -30,7 +23,10 @@ public class Inventario implements Serializable {
     private Integer[] capacidade_cat = new Integer[4];
     private String limite_credito;
 
-    private Integer id_ficha;
+    @OneToOne
+    @JoinColumn(name = "id_ficha", nullable = false)
+    private Ficha ficha;
+
 
     @OneToMany(mappedBy = "inventario")
     private List<Item> items;

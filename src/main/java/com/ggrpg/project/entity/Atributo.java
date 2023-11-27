@@ -2,13 +2,7 @@ package com.ggrpg.project.entity;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -31,17 +25,19 @@ public class Atributo implements Serializable {
     private Integer presenca;
     private Integer vigor;
 
-    private Integer id_ficha;
+    @ManyToOne
+    @JoinColumn(name = "id_ficha", nullable = false)
+    private Ficha ficha;
+
 
     public Atributo(Integer id_atributo, Integer forca, Integer agilidade, Integer intelecto, Integer vigor,
-            Integer presenca, Integer id_ficha) {
+            Integer presenca) {
         this.id_atributo = id_atributo;
         this.forca = forca;
         this.agilidade = agilidade;
         this.intelecto = intelecto;
         this.vigor = vigor;
         this.presenca = presenca;
-        this.id_ficha = id_ficha;
     }
 
 }

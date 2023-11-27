@@ -50,7 +50,7 @@ public class AtaqueService {
         entity.setArma(obj.getArma());
         entity.setTeste(obj.getTeste());
         entity.setDano(obj.getDano());
-        entity.setId_ficha(obj.getId_ficha());
+        entity.setFicha(obj.getFicha());
     }
 
 }
