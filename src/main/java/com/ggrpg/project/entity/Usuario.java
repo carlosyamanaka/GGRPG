@@ -3,6 +3,9 @@ package com.ggrpg.project.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.micrometer.common.lang.Nullable;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,11 +25,9 @@ public class Usuario implements Serializable {
     private Integer id_usuario;
     private String email;
 
-    @ManyToOne
-    @JoinColumn(name = "id_ficha", nullable = false)
-    @ForeignKey(name = "pessoa_fk")
-    private Ficha ficha = new Ficha();
-
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private List<Ficha> fichas; 
 
     public Usuario(Integer id_usuario, String email) {
         this.id_usuario = id_usuario;

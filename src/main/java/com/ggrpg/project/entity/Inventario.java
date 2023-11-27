@@ -27,8 +27,7 @@ public class Inventario implements Serializable {
     @JoinColumn(name = "id_ficha", nullable = false)
     private Ficha ficha;
 
-
-    @OneToMany(mappedBy = "inventario")
+    @OneToMany(mappedBy = "inventario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Item> items;
 
     public Inventario(Integer id_inventario, Integer capacidade, Integer lotacao, Integer[] capacidade_cat,

@@ -5,15 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -38,15 +30,18 @@ public class Ficha implements Serializable {
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "id_usuario", nullable = false)
+    @JoinColumn(name = "id_usuario")
     private Usuario usuario;
 
-    @OneToOne
-    private Atributo atributo;
-
-    @OneToOne
+    @JsonIgnore
+    @OneToOne(mappedBy = "ficha")
     private Propriedade propriedade;
 
+    @JsonIgnore
+    @OneToOne(mappedBy = "ficha", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Atributo atributo;
+
+    @JsonIgnore
     @OneToOne(mappedBy = "ficha")
     private Inventario inventario;
 
@@ -54,6 +49,7 @@ public class Ficha implements Serializable {
     @OneToMany(mappedBy = "ficha")
     private List<Habilidade> habilidades;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "ficha")
     private Pericia pericia;
 
@@ -64,7 +60,7 @@ public class Ficha implements Serializable {
     @JsonIgnore
     @OneToMany(mappedBy = "ficha")
     private List<Ataque> ataques;
-
+    
     public Ficha(Integer id_ficha, String nomeDoPersonagem, String nomeDoJogador, String sistema, String email_usuario) {
         this.id_ficha = id_ficha;
         this.nomeDoPersonagem = nomeDoPersonagem;

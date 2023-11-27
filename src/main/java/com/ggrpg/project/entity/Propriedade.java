@@ -2,6 +2,7 @@ package com.ggrpg.project.entity;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,7 +34,7 @@ public class Propriedade implements Serializable {
     private Integer sanidadeAtual;
     private Integer defesa;
 
-
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "id_ficha", nullable = false)
     private Ficha ficha;
