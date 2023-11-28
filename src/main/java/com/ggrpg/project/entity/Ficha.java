@@ -39,7 +39,6 @@ public class Ficha implements Serializable {
     @JsonBackReference
     private Usuario usuario;
 
-    @JsonIgnore
     @OneToOne(mappedBy = "ficha", cascade = CascadeType.ALL, orphanRemoval = true)
     private Propriedade propriedade;
 
