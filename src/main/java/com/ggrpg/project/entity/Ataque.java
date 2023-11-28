@@ -2,6 +2,8 @@ package com.ggrpg.project.entity;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -40,15 +42,16 @@ public class Ataque implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_ficha", nullable = false)
+    @JsonBackReference
     private Ficha ficha;
 
-    public Ataque(Integer id_ataque,String nome,  String arma, String teste, Integer dano, Ficha ficha) {
+    public Ataque(Integer id_ataque, String nome, String arma, String teste, Integer dano) {
         this.id_ataque = id_ataque;
         this.nome = nome;
         this.arma = arma;
         this.teste = teste;
         this.dano = dano;
-        this.ficha = ficha;
+        // this.ficha = ficha;
     }
 
 }

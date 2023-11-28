@@ -26,9 +26,8 @@ public class Atributo implements Serializable {
     private Integer vigor;
 
     @OneToOne
-    @JoinColumn(name = "id_ficha", nullable = false)
+    @JoinColumn(name = "id_ficha", nullable = true)
     private Ficha ficha;
-
 
     public Atributo(Integer id_atributo, Integer forca, Integer agilidade, Integer intelecto, Integer vigor,
             Integer presenca) {

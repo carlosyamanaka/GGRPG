@@ -61,7 +61,7 @@ public class AtaqueController {
     }
 
     @DeleteMapping(value = "/{id_ataque}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+    public ResponseEntity<Void> delete(@PathVariable("id_ataque") Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

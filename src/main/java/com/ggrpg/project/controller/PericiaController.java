@@ -47,7 +47,7 @@ public class PericiaController {
     }
 
     @DeleteMapping(value = "/{id_pericia}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+    public ResponseEntity<Void> delete(@PathVariable("id_pericia") Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

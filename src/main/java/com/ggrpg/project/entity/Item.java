@@ -2,6 +2,8 @@ package com.ggrpg.project.entity;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -32,6 +34,7 @@ public class Item implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_inventario", nullable = false)
+    @JsonBackReference
     private Inventario inventario;
 
     public Item(Integer id_item, String nome, Integer espaco, Integer categoria, String descricao) {

@@ -21,7 +21,7 @@ import com.ggrpg.project.service.FichaService;
 
 @RestController
 @RequestMapping(value = "/fichas")
-@CrossOrigin(origins="*")
+@CrossOrigin(origins = "*")
 public class FichaController {
 
     @Autowired
@@ -48,7 +48,7 @@ public class FichaController {
     }
 
     @DeleteMapping(value = "/{id_ficha}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+    public ResponseEntity<Void> delete(@PathVariable("id_ficha") Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

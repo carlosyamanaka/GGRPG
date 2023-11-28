@@ -48,7 +48,7 @@ public class InventarioController {
     }
 
     @DeleteMapping(value = "/{id_inventario}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+    public ResponseEntity<Void> delete(@PathVariable("id_inventario") Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

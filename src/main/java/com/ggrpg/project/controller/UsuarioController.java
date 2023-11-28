@@ -21,7 +21,7 @@ import com.ggrpg.project.service.UsuarioService;
 
 @RestController
 @RequestMapping(value = "/usuarios")
-@CrossOrigin(origins="*")
+@CrossOrigin(origins = "*")
 public class UsuarioController {
 
     @Autowired
@@ -48,14 +48,15 @@ public class UsuarioController {
     }
 
     @DeleteMapping(value = "/{id_usuario}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+    public ResponseEntity<Void> delete(@PathVariable("id_usuario") Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping(value = "/{id_usuario}")
-    public ResponseEntity<Usuario> update(@PathVariable Integer id, @RequestBody Usuario obj) {
+    public ResponseEntity<Usuario> update(@PathVariable("id_usuario") Integer id, @RequestBody Usuario obj) {
         obj = service.update(id, obj);
         return ResponseEntity.ok().body(obj);
     }
+
 }

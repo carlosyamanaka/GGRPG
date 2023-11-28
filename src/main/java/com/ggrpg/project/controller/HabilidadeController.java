@@ -48,7 +48,7 @@ public class HabilidadeController {
     }
 
     @DeleteMapping(value = "/{id_habilidade}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+    public ResponseEntity<Void> delete(@PathVariable("id_habilidade") Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

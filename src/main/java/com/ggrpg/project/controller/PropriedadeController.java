@@ -21,7 +21,7 @@ import com.ggrpg.project.service.PropriedadeService;
 
 @RestController
 @RequestMapping(value = "/propriedades")
-@CrossOrigin(origins="*")
+@CrossOrigin(origins = "*")
 public class PropriedadeController {
 
     @Autowired
@@ -48,7 +48,7 @@ public class PropriedadeController {
     }
 
     @DeleteMapping(value = "/{id_propriedade}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+    public ResponseEntity<Void> delete(@PathVariable("id_propriedade") Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

@@ -3,6 +3,8 @@ package com.ggrpg.project.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,6 +30,7 @@ public class Inventario implements Serializable {
     private Ficha ficha;
 
     @OneToMany(mappedBy = "inventario", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Item> items;
 
     public Inventario(Integer id_inventario, Integer capacidade, Integer lotacao, Integer[] capacidade_cat,

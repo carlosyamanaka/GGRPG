@@ -50,7 +50,7 @@ public class AtributoController {
     }
 
     @DeleteMapping(value = "/{id_atributo}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+    public ResponseEntity<Void> delete(@PathVariable("id_atributo") Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

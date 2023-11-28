@@ -3,7 +3,9 @@ package com.ggrpg.project.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -19,8 +21,7 @@ public class Ficha implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-
-    @Id 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id_ficha;
     private String nomeDoPersonagem;
@@ -29,12 +30,17 @@ public class Ficha implements Serializable {
     private String email_usuario;
 
     @JsonIgnore
+    @OneToMany(mappedBy = "ficha")
+    @JsonManagedReference
+    private List<Ataque> ataques;
+
     @ManyToOne
-    @JoinColumn(name = "id_usuario")
+    @JoinColumn(name = "id_usuario", nullable = false)
+    @JsonBackReference
     private Usuario usuario;
 
     @JsonIgnore
-    @OneToOne(mappedBy = "ficha")
+    @OneToOne(mappedBy = "ficha", cascade = CascadeType.ALL, orphanRemoval = true)
     private Propriedade propriedade;
 
     @JsonIgnore
@@ -47,21 +53,20 @@ public class Ficha implements Serializable {
 
     @JsonIgnore
     @OneToMany(mappedBy = "ficha")
+    @JsonManagedReference
     private List<Habilidade> habilidades;
 
     @JsonIgnore
-    @OneToOne(mappedBy = "ficha")
+    @OneToOne(mappedBy = "ficha", cascade = CascadeType.ALL, orphanRemoval = true)
     private Pericia pericia;
 
     @JsonIgnore
+    @JsonManagedReference
     @OneToMany(mappedBy = "ficha")
     private List<Ritual> rituais;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "ficha")
-    private List<Ataque> ataques;
-    
-    public Ficha(Integer id_ficha, String nomeDoPersonagem, String nomeDoJogador, String sistema, String email_usuario) {
+    public Ficha(Integer id_ficha, String nomeDoPersonagem, String nomeDoJogador, String sistema,
+            String email_usuario) {
         this.id_ficha = id_ficha;
         this.nomeDoPersonagem = nomeDoPersonagem;
         this.nomeDoJogador = nomeDoJogador;

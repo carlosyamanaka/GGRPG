@@ -2,6 +2,8 @@ package com.ggrpg.project.entity;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,5 +36,7 @@ public class Habilidade implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_ficha", nullable = false)
+    @JsonBackReference
     private Ficha ficha;
+
 }

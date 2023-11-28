@@ -21,7 +21,7 @@ import com.ggrpg.project.service.RitualService;
 
 @RestController
 @RequestMapping(value = "/rituais")
-@CrossOrigin(origins="*")
+@CrossOrigin(origins = "*")
 public class RitualController {
 
     @Autowired
@@ -48,7 +48,7 @@ public class RitualController {
     }
 
     @DeleteMapping(value = "/{id_ritual}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+    public ResponseEntity<Void> delete(@PathVariable("id_ritual") Integer id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }

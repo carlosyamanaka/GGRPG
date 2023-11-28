@@ -57,7 +57,7 @@ public class Pericia implements Serializable {
     private Integer vontade;
 
     @OneToOne
-    @JoinColumn(name = "id_ficha", nullable = false)
+    @JoinColumn(name = "id_ficha", nullable = true)
     private Ficha ficha;
 
     public Pericia(Integer id_pericia, Integer acrobacia, Integer adestramento, Integer artes, Integer atletismo,
@@ -66,8 +66,7 @@ public class Pericia implements Serializable {
             Integer investigacao, Integer luta, Integer medicina, Integer ocultismo, Integer percepcao,
             Integer pilotagem, Integer pontaria, Integer profissao, Integer reflexos, Integer religiao,
             Integer sobrevivencia, Integer tatica, Integer tecnologia, Integer vontade) {
-        
-        
+
         this.id_pericia = id_pericia;
         this.acrobacia = acrobacia;
         this.adestramento = adestramento;
@@ -98,6 +97,5 @@ public class Pericia implements Serializable {
         this.tecnologia = tecnologia;
         this.vontade = vontade;
     }
-
 
 }
