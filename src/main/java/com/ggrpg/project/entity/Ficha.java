@@ -39,19 +39,24 @@ public class Ficha implements Serializable {
     private Usuario usuario;
 
     @OneToOne(mappedBy = "ficha", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private Propriedade propriedade;
 
     @OneToOne(mappedBy = "ficha", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private Atributo atributo;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "ficha")
     private Inventario inventario;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "ficha")
     @JsonManagedReference
     private List<Habilidade> habilidades;
 
     @OneToOne(mappedBy = "ficha", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private Pericia pericia;
 
     @JsonManagedReference

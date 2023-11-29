@@ -2,7 +2,7 @@ package com.ggrpg.project.entity;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -35,9 +35,9 @@ public class Propriedade implements Serializable {
     private Integer sanidadeAtual;
     private Integer defesa;
 
-    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "id_ficha", nullable = true)
+    @JsonBackReference
     private Ficha ficha;
 
     // Criar ficha

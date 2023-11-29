@@ -22,7 +22,6 @@ public class Inventario implements Serializable {
     private Integer id_inventario;
     private Integer capacidade;
     private Integer lotacao;
-    private Integer[] capacidade_cat = new Integer[4];
     private String limite_credito;
 
     @OneToOne
@@ -33,12 +32,11 @@ public class Inventario implements Serializable {
     @JsonManagedReference
     private List<Item> items;
 
-    public Inventario(Integer id_inventario, Integer capacidade, Integer lotacao, Integer[] capacidade_cat,
+    public Inventario(Integer id_inventario, Integer capacidade, Integer lotacao,
             String limite_credito) {
         this.id_inventario = id_inventario;
         this.capacidade = capacidade;
         this.lotacao = lotacao;
-        this.capacidade_cat = capacidade_cat;
         this.limite_credito = limite_credito;
     }
 

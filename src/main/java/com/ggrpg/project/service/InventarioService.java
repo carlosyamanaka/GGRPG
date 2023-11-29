@@ -42,7 +42,6 @@ public class InventarioService {
     private void updateData(Inventario entity, Inventario obj) {
         entity.setCapacidade(obj.getCapacidade());
         entity.setLotacao(obj.getLotacao());
-        entity.setCapacidade_cat(obj.getCapacidade_cat());
         entity.setLimite_credito(obj.getLimite_credito());
         entity.setFicha(obj.getFicha());
     }

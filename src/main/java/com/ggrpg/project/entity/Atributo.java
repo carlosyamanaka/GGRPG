@@ -2,7 +2,7 @@ package com.ggrpg.project.entity;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -27,9 +27,9 @@ public class Atributo implements Serializable {
     private Integer presenca;
     private Integer vigor;
 
-    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "id_ficha", nullable = true)
+    @JsonBackReference
     private Ficha ficha;
 
     public Atributo(Integer id_atributo, Integer forca, Integer agilidade, Integer intelecto, Integer vigor,
