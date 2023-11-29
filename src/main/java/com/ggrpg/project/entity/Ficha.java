@@ -46,11 +46,10 @@ public class Ficha implements Serializable {
     @JsonManagedReference
     private Atributo atributo;
 
-    @JsonIgnore
     @OneToOne(mappedBy = "ficha")
+    @JsonManagedReference
     private Inventario inventario;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "ficha")
     @JsonManagedReference
     private List<Habilidade> habilidades;

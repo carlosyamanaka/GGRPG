@@ -3,6 +3,7 @@ package com.ggrpg.project.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.*;
@@ -26,6 +27,7 @@ public class Inventario implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "id_ficha", nullable = false)
+    @JsonBackReference
     private Ficha ficha;
 
     @OneToMany(mappedBy = "inventario", cascade = CascadeType.ALL, orphanRemoval = true)
