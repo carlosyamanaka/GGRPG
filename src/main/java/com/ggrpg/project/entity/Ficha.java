@@ -29,7 +29,6 @@ public class Ficha implements Serializable {
     private String sistema;
     private String email_usuario;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "ficha")
     @JsonManagedReference
     private List<Ataque> ataques;
@@ -42,24 +41,19 @@ public class Ficha implements Serializable {
     @OneToOne(mappedBy = "ficha", cascade = CascadeType.ALL, orphanRemoval = true)
     private Propriedade propriedade;
 
-    @JsonIgnore
     @OneToOne(mappedBy = "ficha", cascade = CascadeType.ALL, orphanRemoval = true)
     private Atributo atributo;
 
-    @JsonIgnore
     @OneToOne(mappedBy = "ficha")
     private Inventario inventario;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "ficha")
     @JsonManagedReference
     private List<Habilidade> habilidades;
 
-    @JsonIgnore
     @OneToOne(mappedBy = "ficha", cascade = CascadeType.ALL, orphanRemoval = true)
     private Pericia pericia;
 
-    @JsonIgnore
     @JsonManagedReference
     @OneToMany(mappedBy = "ficha")
     private List<Ritual> rituais;
