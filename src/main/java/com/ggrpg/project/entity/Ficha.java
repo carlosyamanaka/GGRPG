@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.*;
@@ -29,7 +28,7 @@ public class Ficha implements Serializable {
     private String sistema;
     private String email_usuario;
 
-    @OneToMany(mappedBy = "ficha")
+    @OneToMany(mappedBy = "ficha", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Ataque> ataques;
 
@@ -46,11 +45,11 @@ public class Ficha implements Serializable {
     @JsonManagedReference
     private Atributo atributo;
 
-    @OneToOne(mappedBy = "ficha")
+    @OneToOne(mappedBy = "ficha", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private Inventario inventario;
 
-    @OneToMany(mappedBy = "ficha")
+    @OneToMany(mappedBy = "ficha", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Habilidade> habilidades;
 
@@ -59,7 +58,7 @@ public class Ficha implements Serializable {
     private Pericia pericia;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "ficha")
+    @OneToMany(mappedBy = "ficha", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Ritual> rituais;
 
     public Ficha(Integer id_ficha, String nomeDoPersonagem, String nomeDoJogador, String sistema,
