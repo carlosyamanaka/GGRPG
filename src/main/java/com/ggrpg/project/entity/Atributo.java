@@ -2,6 +2,8 @@ package com.ggrpg.project.entity;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,6 +27,7 @@ public class Atributo implements Serializable {
     private Integer presenca;
     private Integer vigor;
 
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name = "id_ficha", nullable = true)
     private Ficha ficha;
